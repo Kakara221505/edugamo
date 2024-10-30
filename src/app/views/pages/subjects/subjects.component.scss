@@ -1,0 +1,274 @@
+.export{
+    float: right;
+    color: white;
+ padding: 10px ;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-top: -12px !important;
+}
+.export2{
+  float: right;
+  color: white;
+padding: 10px;
+  border-radius: 8px;
+  margin-right: 20px !important;
+  font-size: 20px;
+  margin-top: -12px !important;
+}
+.btn i{
+  font-size: 20px !important;
+}
+hr{
+  margin-top: 2rem;
+  margin-bottom: 1rem !important;
+}
+.labelhead{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+   
+  }
+  .filter{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  // .btn-reset {
+  //   width: 100%;
+  // }
+  .card-title{
+    font-size: 32px !important;
+    text-transform: capitalize !important;
+  }
+  .btn i{
+    font-size: 22px !important;
+  }
+  .btn{
+    font-size: 22px !important;
+  }
+  hr{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .card-title1 {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+  }
+ 
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #1D1D1D !important;
+  }
+  .table tbody td{
+    font-size: 15px !important;
+  }
+  .table-responsive .ng-toggle-switch-core{
+    background-color: #FFCC00  !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+
+  .ng-toggle-switch.true {
+    background-color:#FFCC00;
+  }
+
+  
+  .btn-apply {
+    color: white;
+    width: 105px;
+    height: 40px;
+    background-color: #FFCC00;
+    font-size: 16px !important;
+  }
+  
+  .btn-reset {
+    width: 105px;
+    height: 40px;
+    background-color: white;
+    border-color: #FFCC00;
+    color: #FFCC00;
+    font-size: 16px !important;
+  }
+  .modal-content{
+      width: 100% !important;
+  }
+  .rounded-corners {
+      border-radius: 20px; 
+      color: white;
+    }
+    .sleectStatus{
+      width: auto !important;
+      color: #000;
+    }
+    .btn-lg {
+      padding: 15px 30px; 
+      font-size: 18px; 
+    }
+   .input-group{
+    margin-top: 0px !important;
+    background-color: #FFFAE7;
+    justify-content: center;
+  }
+  .filterSelected{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+  }
+   .fromdate{
+    margin-top: 10px !important;
+   }
+   .close{
+    color: #FFCC00;
+    border: 2px solid #FFCC00;
+    border-radius: 8px !important;
+    width: 28px;
+    height: 28px;
+  }
+  .modal-header .close {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px !important;
+}
+.subject{
+    margin: 20px;
+   
+}
+.Subject_name {
+    width: 100% !important;
+    height: 50px !important;
+    background-color: #FFFAE7;
+    border: none !important;
+    border-radius: 5px !important;
+    padding-left: 10px !important;
+    font-size: 20px !important;
+}
+.Subject_name4{
+  padding-top: 10px !important;
+  width: 100% !important;
+  height: 50px !important;
+  background-color: #FFFAE7;
+  border: none !important;
+  border-radius: 5px !important;
+  padding-left: 10px !important;
+  font-size: 20px !important;
+}
+.subjectName{
+    font-size: 20px !important;
+    margin-top: 10px !important;
+}
+#exampleModalLabel{
+    font-size: 27px !important;
+    margin-left: 20px !important;
+}
+.buttonSelect{
+    color: white;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 20px !important;
+    margin: 25px !important;
+  }
+  .cancelButton{
+    color: black;
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color:white;
+    border-color: white;
+    border-radius: 25px;
+    font-size: 20px !important;
+    font-weight: bold;
+    margin: 30px !important;
+    margin-top: -10px !important;
+  }
+  .gameCreated{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 20px !important;
+  }
+  .gameCreated h6{
+    font-size: 22px !important;
+    color: #1D1D1D;
+    
+  }
+  .modal-header{
+    border-bottom: 1px solid #1D1D1D;
+  }
+ .gameViewColor{
+    color: #7E7E7E;
+    margin-left: 5px !important;
+  }
+  .filterApply{
+    margin-top: 20px !important;
+  }
+  .eye{
+    font-size: 20px !important;
+  }
+  .ascending2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px !important;
+    margin-top: -15px !important;
+  }
+  .ascending1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px !important;
+    margin-top: -15px !important;
+  }
+  .ascending3{
+    display: flex;
+    flex-direction: column;
+    margin-left:130px !important;
+    margin-top: -15px !important;
+  }
+  .file-upload
+{
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+}
+#fileLoader {
+    position: absolute;
+    left: -9999px;
+}
+label[for="fileLoader"]{
+  padding:0.5em;  
+  background: #999;
+  cursor:pointer;
+  float:left;
+  color: #000;
+}
+#filename{
+  padding:0.5em;
+  width:150px;
+  white-space: nowrap;
+  overflow:hidden;
+  background:#739BAE;
+  float:left;
+}
+.subjectIconUrl{
+  margin-top: 35px !important;
+  margin-left: 60px;
+  margin-bottom: 15px;
+}
+.subjectIconUrl img{
+ width: 100px;
+}
+.btn-warning{
+  background-color: #FFCC00 !important;
+}

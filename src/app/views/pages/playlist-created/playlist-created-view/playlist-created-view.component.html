@@ -1,0 +1,73 @@
+<div>
+    <h4 class="card-title header">View User Playlist 
+    
+    </h4>
+</div>
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card playlistInformation">
+        <div class="card-body">
+          <div class="row information">
+            <div class="col-md-3"><h6>Paylist Name</h6><label class="basicInformation"><a class="playList" href="{{playlistUrl}}" target="_blank">{{playlistViewName}}</a></label></div>
+            <div class="col-md-3"><h6>Tags</h6><label class="basicInformation">{{playlistViewData}}</label></div>
+            <div class="col-md-4"><h6>Total Users Saved The Playlist</h6><label class="basicInformation">{{playlistSavedGames}}</label></div>
+            <div class="col-md-2"> <h6>Total Games</h6><label class="basicInformation">{{playlistTotalGames}}</label></div>  
+          </div>
+          <div class="row information">
+            <div class="col-md-3"><h6>Created On</h6><label class="basicInformation">{{playlistCreatedDate | date : 'medium'}}</label></div>
+            <div class="col-md-3"><h6>Created By</h6><a href="/user/view/{{createdID}}" class="basicInformation createdNextPage" target="_blank">{{createdBy}}</a></div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gameInformation">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title subheading">Playlist's Games</h6>
+          <hr>
+          <div class="table-responsive" style="padding-top: 10px;">
+            <table class="table ">
+                <thead>
+                  <tr class="tableheading">
+                    <th>Games</th>
+                    <th>Total Users played Games</th>
+                    <th>Ratings</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of playlistGameData; let i=index">
+                    <td><a class="gameUrl" href="{{list.gameUrl}}" target="_blank">{{list.gameName}}</a></td>
+                    <td>{{list.totapPlayedGames}}</td>
+                    <td>{{list.rating}}</td>
+                    
+                    <td>
+                      <select id="statusChange" [(ngModel)]="list.status" class="filterSelected" 
+                      (change)="flaggedGameBan(list)" name="statusSelect" #statusSelect="ngModel">
+                        <option value="" disabled selected>Select</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="INACTIVE">INACTIVE</option>
+                      </select>
+                    </td>
+                    <td><a (click)="removeGame(list.id)" class="underline">Remove game <span class="underline"></span></a></td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

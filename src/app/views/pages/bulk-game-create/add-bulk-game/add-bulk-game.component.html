@@ -1,0 +1,422 @@
+
+<h4 class="headinggame">Bulk Game Details</h4>
+<div class="col-md-12 grid-margin">
+  <div class="card">
+    <div class="card-body">
+      <aw-wizard #wizard [navBarLayout]="'large-filled'" class="gameDetails">
+        <aw-wizard-step stepTitle="step 1" style="border-color: aqua; color: black;">
+          
+          <h4 class="card-title heading">Game Details</h4>
+          <form class="forms-sample" #createGameForm="ngForm">
+            <!-- <div class="form-group">
+                <h5 for="exampleInputUsername1" class="label">Title</h5>
+                <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Enter title of the game"
+                name="titleName" #titleName="ngModel" [(ngModel)]="title"
+                (ngModelChange)="onModelChange($event)"
+                [attr.maxlength]="counter ? maxNumberOfCharacters : ''" required> 
+                <p class="lengthClass" style="text-align: right;">{{numberOfCharacters1}} / {{maxNumberOfCharacters}}</p>
+              </div> -->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h5 class="label">Subject</h5>
+                    <select class="form-control filterSelected"  name="subjectSelect" #subjectSelect="ngModel"
+                    [(ngModel)]="subjectValue" (change)="getSubjectValue($event)" required>
+                      <option  selected disabled>Select Subject</option>
+                      <option *ngFor="let list of subjectData; let i=index"  [ngValue]="list"> {{list.title}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h5 class="label">Template</h5>
+                    <select class="form-control filterSelected" name="TemplateSelect" #TemplateSelect="ngModel"
+                    [(ngModel)]="templateValue" required>
+                      <option  selected disabled>Select Template</option>
+                      <option *ngFor="let item of templateData" [ngValue]="item">{{item.title}}</option>
+                      <option value="0000" >Random Template</option>
+                    </select>
+                  </div>
+                </div><!-- Col -->
+              </div><!-- Row -->
+              <div class="form-group">
+                <h5 for="exampleInputUsername1" class="label">Tags</h5>
+                <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Enter Tags"
+                (keyup)="splitTag()" required
+                name="addTag" #addTag="ngModel" [(ngModel)]="tag" >
+                <p class="lengthClass" style="text-align: right;">Upto 3 tags</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h5 class="label">Is This Pro Game?</h5><br>
+                    <ng-toggle  [color]="{
+                      unchecked: '#e0e0df',
+                      checked: '#ffbd00'
+                    }" name="toggle"[(ngModel)]="pro"></ng-toggle>
+                  </div>
+                </div><!-- Col -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1" class="label">Display Name</label>
+                    <select class="form-control filterSelected" name="displayName" #displayName="ngModel" [(ngModel)]="userId" required>
+                      <option selected disabled>Select Display Name</option>
+                      <option *ngFor="let item of displayData;let i= index" [ngValue]="item">{{item.displayName}}</option>
+                   
+                    </select>
+                  </div>
+                </div><!-- Col -->
+              </div><!-- Row -->
+        </form>
+        <br>
+        <div class="buttons">
+          <button type="button" class="btn btn-warning btn-lg button" awNextStep [disabled]="createGameForm.invalid || isMoreThanThreeTags()" (click)="splitTag()">Next</button> 
+          <!-- <button type="button" class="btn btn-warning btn-lg button" awNextStep (click)="splitTag()">Next</button>    -->
+        </div>
+        </aw-wizard-step>
+        <aw-wizard-step stepTitle="step 2">
+            <h4 class="card-title heading">Imported Games</h4>
+            <div class="row">
+              <div class="col-sm-12">
+                <label class="btn btn-warning btn-lg upload-csv-button bulk-upload">
+                  <i class="feather icon-upload uploaddata"></i> Upload Zip Folder
+                  <input type="file" style="display: none;" accept=".zip" (click)="resetUploadFlag()" (change)="onFileChange($event)">
+                </label>
+              </div>
+            </div>
+            
+
+            <div class="col-md-12 grid-margin">
+                <!-- <div class="card" style="background-color: #ecdca7;">
+                  <div class="card-body"> -->
+                    <!-- Add your HTML content here -->
+                    <!-- <h4 class="headinggame">Bulk Game Details</h4> -->
+              
+                    <!-- Added Games Section -->
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card" style="background-color: #ecdca7;">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-3">
+                                  <h4>Added Games</h4>
+                              </div>
+                              <div class="col-md-9 text-right">
+            
+                                <button type="button" style="width: 25%" class="btn btn-warning btn-md button" [disabled]="!zipFileUploaded"  (click)="deleteAllGames()">  <i class="feather icon-trash uploaddata"></i>Delete All Games</button>
+                              
+                          </div>
+                          </div>
+                          <!-- <div class="col-md-3 text-right">
+                            <button class="btn btn-danger" (click)="deleteAllGames()">Delete All Games</button>
+                        </div> -->
+                          
+                            <div class="row">
+                              <div class="col-md-3">
+                                <h4 class="side">Game Title</h4>
+                              </div>
+                              <div class="col-md-2">
+                                <h4 class="side">Game Templates</h4>
+                              </div>
+                              <div class="col-md-2">
+                                <h4 class="side">Display Name</h4>
+                              </div>
+                              <div class="col-md-3">
+                                <h4 class="side">Exceeding Character Limit</h4>
+                              </div>
+                            </div>
+              
+                            <!-- Display uploaded CSV content her -->
+                            <!-- Loop over the content and display it accordingly -->
+
+                            <ol class="sideAandB">
+                              <li  *ngFor="let game of gameTitles; let i = index">
+                            <div class="row"  >
+                              <div class="col-sm-3">
+                                <div class="card">
+                                  <div class="card-body sidesCard">
+                                    <p>{{ game.fileName }}</p>
+                                    <span style="color: red;" *ngIf="isFileNameExceeded(game.fileName)">Character limit exceeded!</span>
+                                    <span *ngIf="isSidesLengthInvalid(game.sides)" style="color: red;">Each game should have between 10 and 300 sides.</span>
+                                  
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-2">
+                                <div class="card">
+                                  <div class="card-body sidesCard">
+                                    <ng-container *ngIf="templateValue === '0000'">
+                                      <p>{{ game.teplateName }}</p>
+                                    </ng-container>                            
+                                    <ng-container *ngIf="templateValue !== '0000'">
+                                      <p>{{ templateValue.title }}</p>
+                                    </ng-container>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-2">
+                                <div class="card ">
+                                <div class="card-body sidesCard">
+                                  <p>{{userId.displayName}}</p>
+                                </div>
+                              </div>
+                              </div>
+                              <div class="col-sm-3">
+                                <div class="card ">
+                                  <div class="card-body sidesCard">
+                                    <p [ngClass]="{ 'exceed-limit': game.characterMet === 'Yes' }">{{ game.characterMet }}</p>
+                                  </div>
+                                  
+                              </div>
+                              </div>
+                              <div class="col-sm-1">
+                                <div class="dlete" (click)="deleteGame(i)" style="cursor: pointer;">
+                                <i class="mdi mdi-delete"></i>
+                              </div>
+                              </div>
+                              <div class="col-sm-1">
+                                <div class="edit">
+                                  <i class="mdi mdi-pencil" (click)="openEditModal(editModal, game)" style="cursor: pointer;"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          </ol>
+                         
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- </div>
+                </div> -->
+              </div>
+              <div class="buttons">
+                <button type="button" class="btn btn-warning btn-lg button" [disabled]="!zipFileUploaded || isNextButtonDisabled() || isNextButtonDisabled1() || isFileNameLimitExceeded()" awNextStep>Next</button>
+                <button class="btn btn-light btn-cancel backbutton" type="button" awPreviousStep>Back</button>
+              </div>
+              
+        </aw-wizard-step>
+        
+        
+
+        <aw-wizard-step stepTitle="finish">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="content-card">
+                <h5 class="card-title">Tags</h5>
+                <div class="tagsList d-flex" >
+                  <div class="prameter" *ngFor="let item of tags"  >
+                    <p class="card-subtitle2">{{item}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h4 class="card-title heading">Preview</h4>
+            </div>
+            <div class="col-md-4">
+              <div class="content-card">
+                <h5 class="card-title">Subject</h5>
+                <p class="card-subtitle" *ngIf="subjectValue">{{subjectValue.title}}</p>
+              </div>
+            </div>
+          </div>
+         
+
+          <div class="col-md-12 grid-margin">
+            <!-- <div class="card" style="background-color: #ecdca7;">
+              <div class="card-body"> -->
+                <!-- Add your HTML content here -->
+                <!-- <h4 class="headinggame">Bulk Game Details</h4> -->
+          
+                <!-- Added Games Section -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card" style="background-color: #ecdca7;">
+                      <div class="card-body">
+                        <h4>Added Games</h4>
+                        <div class="row">
+                          <div class="col-md-3">
+                            <h4 class="side">Game Title</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <h4 class="side">Game Templates</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <h4 class="side">Display Name</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <h4 class="side">Character Met</h4>
+                          </div>
+                        </div>
+          
+                        <!-- Display uploaded CSV content her -->
+                        <!-- Loop over the content and display it accordingly -->
+
+                        <ol class="sideAandB">
+                          <li  *ngFor="let game of gameTitles; let i = index">
+                        <div class="row"  >
+                          <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body sidesCard">
+                                <p>{{ game.fileName }}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body sidesCard">
+                                <ng-container *ngIf="templateValue === '0000'">
+                                  <p>{{ game.teplateName }}</p>
+                                </ng-container>                            
+                                <ng-container *ngIf="templateValue !== '0000'">
+                                  <p>{{ templateValue.title }}</p>
+                                </ng-container>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="card ">
+                            <div class="card-body sidesCard">
+                              <p>{{userId.displayName}}</p>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="card ">
+                            <div class="card-body sidesCard">
+                              <p>NO</p>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </li>
+                      </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- </div>
+            </div> -->
+          </div>
+         
+          <div class="buttons">
+            <button type="button" class="btn btn-warning btn-lg button" (click)="createGame()" awNextStep  >Create game</button>
+            <button class="btn btn-light btn-cancel backbutton" type="button" awPreviousStep>Back</button> 
+          </div>
+        </aw-wizard-step>
+      </aw-wizard>
+
+    </div>
+  </div>
+</div>
+
+<div class="line314">
+  <ng-template  #editModal let-modal class="sides custom-modal">
+    <div class="modal-content specific-modal">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Edit Game Details</h5>
+      <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Display the game details in a form for editing -->
+      <div class="col-sm-12 stretch-card">
+        <div class="card" style="background-color: #F4F1E7;">
+          <div class="card-body">
+            <h4>Game Title</h4>
+            <div class="row">
+              <div class="col-sm-10">
+                <p *ngIf="!gameToEdit.editingFileName">{{ gameToEdit.fileName }}</p>
+    <!-- Display input field when editing -->
+    <input *ngIf="gameToEdit.editingFileName" type="text" class="form-control" [(ngModel)]="gameToEdit.updatedFileName">
+    <!-- Error message for exceeding character limit -->
+    <span *ngIf="isFileNameExceeded(gameToEdit.updatedFileName || gameToEdit.fileName)" class="exceed-limit">Game Title should be less than 30 characters.</span>
+              </div>
+              <div class="col-sm-2">
+                <div class="edit" (click)="toggleEditFileName(gameToEdit)" style="cursor: pointer;">
+                  <i class="mdi mdi-pencil" ></i>
+                </div>
+                
+              </div>
+
+            </div>
+           
+     
+            <h4>ADDED SIDES</h4>
+            <div class="row">
+              <div class="col-md-4">
+                <h4 class="side">Side A</h4>
+              </div>
+              <div class="col-md-4">
+                <h4 class="sideb">Side B</h4>
+              </div>
+            </div>
+            <ol class="sideAandB">
+              <li *ngFor="let side of gameToEdit.sides; let i = index">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body sidesCard">
+                        <textarea rows="6" *ngIf="side.editingSideA" type="text" class="form-control textarea" [(ngModel)]="side.sideA"> </textarea>
+                        <p *ngIf="!side.editingSideA" >{{ side.sideA }}</p>
+                        <span *ngIf="isSideAExceeded(side.sideA)" class="error-message"><i class="mdi mdi-alert-circle"></i>Side A should be less than 50 charector or more than 0</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- (click)="startEditing(side, 'sideA')" -->
+                  <!-- (click)="startEditing(side, 'sideB')" -->
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body sidesCard">
+                        
+                        <textarea rows="6" *ngIf="side.editingSideB" type="text" class="form-control textarea" [(ngModel)]="side.sideB"> </textarea>
+                        <p *ngIf="!side.editingSideB" >{{ side.sideB }}</p>
+                        <span *ngIf="isSideBExceeded(side.sideB)" class="error-message"><i class="mdi mdi-alert-circle"></i>Side B should be less than 80 charector or more than 0</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2">
+                    <div class="dlete" (click)="deleteSide(i)" style="cursor: pointer;">
+                      <i class="mdi mdi-delete"></i>
+                    </div>
+                    
+                    
+                  </div>
+  
+                  <div class="col-sm-2">
+                    <div class="edit" (click)="startEditing(side, 'sideA'); startEditing(side, 'sideB')" style="cursor: pointer;">
+                      <i class="mdi mdi-pencil"></i>
+                    </div>
+                    
+                  </div>
+                </div>
+              </li>
+            </ol>    
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close')">Close</button>
+      <button type="button" class="btn btn-primary" (click)="saveChanges()">Save Changes</button>
+    </div>
+  </div>
+
+  </ng-template>
+</div>
+
+
+
+
+
+
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+[fullScreen]="true">
+<p style="color: white"> Loading... </p>
+</ngx-spinner>

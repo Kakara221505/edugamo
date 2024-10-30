@@ -1,0 +1,313 @@
+.ng-toggle-switch-core{
+    width: 45px;
+    height: 25px;
+    transition: all 300ms ease 0s;
+    background-color: rgb(0, 204, 7);
+    border-radius: 13px;
+}
+.filterSelected{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}
+.button{
+    float: right;
+    width: 15%;
+    height: 50px;
+    color: white;
+    border-radius: 25px;
+}
+.backbutton{
+    float: right;
+    width: 15%;
+    height: 50px;
+    color: #FFCC00 ;
+    border-radius: 25px;
+    background: white;
+    margin-right: 18px;
+    border-color: #FFCC00 ;
+}
+.addbutton{
+    color: white;
+    width: 100%;
+    border-radius: 15px;
+    height: 50px;
+}
+.headinggame{
+    font-size: 32px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 40px !important;
+
+}
+.heading{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px !important;
+}
+
+.form-control{
+    height: calc(2em + 0.75rem + 2px) !important;
+    border-radius: 8px;
+}
+.sideAandB{
+  margin-left: -25px !important;
+}
+.side{
+  font-size: 17px;
+  margin-left: 20px !important;
+}
+.sideb{
+  font-size: 17px;
+  margin-left: 10px !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    padding-top: 10px !important;
+}
+.text{
+font-size: 15px;
+    color: #aab2bd;
+}
+.labelhead{
+    font-size: 15px;
+   
+}
+.label{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px !important;
+}
+.labelnotes{
+    font-size: 15px;
+    text-align: center;
+}
+.upload{
+    font-size: 15px;
+    text-align: center;
+    margin-left: 40px;
+}
+.uploadicon{
+    text-align: center;
+    color: #FFCC00 ;
+}
+.uploaddata{
+    margin-right: 10px;
+}
+.underline {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #FFCC00;
+  margin-left: 0px;
+}
+  .underlineblack{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black; /* Adjust color as needed */
+    margin-top: 0px; /* Adjust spacing as needed */
+  }
+// .form-group {
+//     margin-bottom: 2rem;
+// }
+.card{
+    border-radius: 20px !important;
+}
+.content-card {
+    background-color: #FFFAF5;
+    padding: 20px;
+    border-radius: 10px;
+   margin: 20px !important;
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  
+  .card-subtitle {
+    color: #6c757d; /* Adjust color as needed */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .final{
+    width: 85% !important;
+    margin-left: 8% !important;
+    height: 100% !important;
+  
+  }
+
+.btn-lg{
+  font-size: 15px !important;
+}
+
+  /* Popup Styles */
+
+  .finalButton{
+    height: 52px;
+    width: 386px;
+    border-radius: 56px;
+    margin-top: 25px;
+    color: white;
+  }
+
+  .finalButton1{
+    height: 52px;
+    width: 386px;
+    border-radius: 56px;
+    color: #FFCC00 ;
+    background-color: white;
+    border-color:#FFCC00 ;
+  }
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111010b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-heading {
+    margin-top: 30px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 45.5px;
+  }
+  
+  .popup-text {
+    margin-bottom: 20px;
+  }
+  
+  .btn-popup {
+    background-color: #FFCC00 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+
+  .orText {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gameDetails{
+    justify-content: center !important;
+    align-content: center !important;
+   
+   
+  }
+  .btn-warning{
+    background-color: #FFCC00 !important;
+  }
+
+  
+
+  .aw-wizard-navigation-bar.horizontal.large-filled ul.steps-indicator li.navigable.done a:hover .step-indicator{
+background-color:yellow !important ;
+  }
+  .buttons{
+    margin-top: 20px !important;
+  }
+  aw-wizard-navigation-bar.horizontal.large-filled{
+    border-bottom: 1px solid Gray !important;
+  }
+  .previewGameCard{
+    background-color: #FFFAE7 !important;
+    height: 400px !important; 
+  }
+  .previewGameCard2{
+    // background: url("../../../../../assets/images/Preview\ game.png") no-repeat ;
+   height: 400px !important; 
+   margin-left: -20px !important;
+   text-align: center !important;
+   margin-top: -7px;
+  }
+  .image-gif{
+    height: 100%;
+    width: 47%;
+  }
+  .previewGameCard2 button{
+    margin-top: 203px !important;
+    border-radius: 50px !important;
+    width: 39%;
+    color: black;
+    text-align: center;
+    background-color:white;
+    margin-right: 110px !important;
+  
+  }
+  .sidesCard{
+    padding: 16px !important;
+  }
+  .dlete{
+    margin-top: 6px !important;
+  }
+  .mdi-delete{
+    font-size: 30px !important;
+    color: #6c757d;
+  }
+  .prameter{
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding: 7px;
+    background-color: gray;
+    margin-left: 10px;
+}
+    
+  
+  .card-subtitle2 {
+    color: white; /* Adjust color as needed */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    
+  }
+
+  .error-text {
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Style for error messages */
+  .error-message {
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  .mdi-alert-circle{
+    color: red !important;
+  }
+  

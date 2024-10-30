@@ -1,0 +1,19 @@
+<div class="row" style="height: 100%;">
+    <div class="col-md-12 stretch-card" style="height: 100%;">
+        <div class="card" style="height: 100%;">
+            <div class="card-body" style="height: 100%;">
+                <label class="card-title">Privacy Policy
+                    <button class="btn btn-warning export2" type="submit" (click)="editPolicy()" [disabled]="!isEditing">Publish</button>
+                    <button class="btn btn-warning export2" type="submit" (click)="toggleEditing()"><i class="mdi mdi-pencil"></i>Edit</button>
+                </label>
+            </div>
+            <div class="col-md-12" >
+                <ckeditor #editorComponent [editor]="Editor" [disabled]="!isEditing"></ckeditor>
+            </div>
+        </div>
+    </div>
+</div>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>

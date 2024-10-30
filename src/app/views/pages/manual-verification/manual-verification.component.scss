@@ -1,0 +1,239 @@
+.export{
+    float: right;
+    color: white;
+   padding: 10px !important;
+    border-radius: 8px;
+    margin-right: 20px !important;
+    margin-top: -10px;
+    }
+    .btn i{
+      font-size: 22px !important;
+    }
+    .btn{
+      font-size: 22px !important;
+    }
+    .card{
+        border: none !important;
+        box-shadow: none !important;
+    }
+  .card-title {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    text-transform: capitalize !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    margin-top: 30px !important;
+  }
+  
+  
+  .card-title {
+      font-size: 32px !important;
+      text-transform: capitalize !important;
+  }
+  .tableheading{
+      background-color: rgba(255, 250, 231, 1);
+    }
+    .eye{
+      width: 30px !important;
+      height: 15px !important;
+    }
+    .modal-title{
+      font-size: 27px !important;
+    }
+    .btn-apply {
+      color: white;
+      width: 83px;
+      height: 40px;
+      background-color:#FFCC00 ;
+      font-size: 16px !important;
+    }
+    .btn-warning{
+      background-color: #FFCC00 !important;
+    }
+    .btn-reset {
+      width: 83px;
+      height: 40px;
+      background-color: white;
+      border-color: #FFCC00;
+      color: #FFCC00 ;
+      font-size: 16px !important;
+    }
+    .btn-lg {
+      padding: 15px 30px; 
+      font-size: 18px; 
+    }
+    .gameCreated{
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
+    }
+    .gameCreated h6{
+      font-size: 22px !important;
+      color: #1D1D1D;
+    }
+    .modal-header{
+      border-bottom: 1px solid #1D1D1D;
+    }
+   .gameViewColor{
+      color: #7E7E7E;
+    }
+    .close{
+      color: #FFCC00;
+      border: 2px solid #FFCC00;
+      border-radius: 8px !important;
+      width: 28px;
+      height: 28px;
+    }
+    .modal-header .close {
+      margin: 0;
+      padding: 0;
+      padding-top: 3px !important;
+  }
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #1D1D1D !important;
+  }
+  .table tbody td{
+    font-size: 15px !important;
+  }
+  .table-responsive .ng-toggle-switch-core{
+    background-color: #FFCC00  !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .search-form{
+    display: inline-block !important;
+  }
+  .searchbutton{
+    width: 366px !important;
+    margin-left: 40px !important;
+    height: 42px !important;
+    border: 1px solid #FFCC00 !important;
+    border-radius: 60px !important;
+  }
+  #searchForm{
+    border: none !important; 
+    width: 223px;
+    margin-left: 15px;
+    font-size: 20px;
+  }
+  .input-group-text2{
+    margin-left: 15px !important;
+    padding-top: 5px !important;
+  }
+  .ascending2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 215px !important;
+    margin-top: -15px !important;
+  }
+  .ascending1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 90px !important;
+    margin-top: -15px !important;
+  }
+  .ascending3{
+    display: flex;
+    flex-direction: column;
+    margin-left:120px !important;
+    margin-top: -15px !important;
+  }
+  .ascending4{
+    display: flex;
+    flex-direction: column;
+    margin-left: 110px !important;
+    margin-top: -15px !important;
+  }
+  .ascending5{
+    display: flex;
+    flex-direction: column;
+    margin-left: 162px !important;
+    margin-top: -15px !important;
+  }
+  .ascending6{
+    display: flex;
+    flex-direction: column;
+    margin-left: 155px !important;
+    margin-top: -15px !important;
+  }
+  .ascending7{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px !important;
+    margin-top: -15px !important;
+  }
+  .ascending8{
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px !important;
+    margin-top: -15px !important;
+  }
+ 
+  .filterApply{
+    margin-top: 20px !important;
+  }
+  #filterSelected{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+  }
+  .sleectStatus{
+    width: 110px !important;
+  }
+  .labelhead{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+  .iconsChnage{
+    display: flex;
+    font-size: 20px !important;
+  }
+  .deleteBtn{
+    color: #FFCC00;
+    margin-left: 10px !important;
+  }
+  .proImage{
+    width: 45px !important;
+    height: 26px !important;
+    margin-left: 40px;
+   
+  }
+  .viewButton{
+    text-decoration: underline !important;
+    color: #212529;
+  }
+  .iconbtn{
+    padding-left: 0 !important;
+  }
+  hr{
+    margin-top: 2rem !important;
+  }
+  .gameUrl{
+    color: black !important;
+  }
+
+  .modal-title1{
+    margin-top: 10px;
+    font-size: 26px;
+    text-align: center;
+  }
+  #exampleModalLabel1{
+    font-size: 35px !important;
+    margin-left: 20px !important;
+    font-weight: 700;
+  }
+  .buttonSelect{
+    color: white;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 20px !important;
+    margin: 25px !important;
+  }

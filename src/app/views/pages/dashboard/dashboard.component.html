@@ -1,0 +1,186 @@
+<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+  <div class="col-md-2 topButtonSelect">
+  <button class="btn" [ngClass]="classVariable === 0?'btn--active' : ''" (click)="dailyData()"> Daily </button> 
+  <div class="lineClass" *ngIf="classVariable === 0">
+    <hr>
+  </div>
+</div>
+<div class="col-md-2 topButtonSelect">
+  <button class="btn" [ngClass]="classVariable === 1?'btn--active' : ''" (click)="weeklyData()"> Weekly</button>
+  <div class="lineClass" *ngIf="classVariable === 1">
+    <hr>
+  </div>
+</div>
+  <div class="col-md-2 topButtonSelect" >
+  <button class="btn" [ngClass]="classVariable === 2?'btn--active' : ''" (click)="monthlyData()"> Monthly</button>
+  <div class="lineClass" *ngIf="classVariable === 2">
+    <hr>
+  </div>
+</div>
+  <div class="col-md-2 topButtonSelect">
+  <button class="btn" [ngClass]="classVariable === 3?'btn--active' : ''" (click)="yearlyData()"> Yearly</button>
+  <div class="lineClass" *ngIf="classVariable === 3">
+    <hr>
+  </div>
+</div>
+  <div class="col-md-2 topButtonSelect" >
+  <button class="btn" [ngClass]="classVariable === 4?'btn--active' : ''" (click)="allTimeData()"> All time</button>
+  <div class="lineClass" *ngIf="classVariable === 4">
+    <hr>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-xl-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Growth Of Users (By Tiers)</h6>
+        
+        <apx-chart
+          [series]="userChart.series"
+          [chart]="userChart.chart"
+          [colors]="userChart.colors"
+          [grid]="userChart.grid"
+          [xaxis]="userChart.xaxis"
+          [yaxis]="userChart.yaxis"
+          [markers]="userChart.markers"
+          [legend]="userChart.legend"
+          [stroke]="userChart.stroke"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Growth Of Games Created</h6>
+        <apx-chart
+          [series]="gamesCreatedChart.series"
+          [chart]="gamesCreatedChart.chart"
+          [colors]="gamesCreatedChart.colors"
+          [grid]="gamesCreatedChart.grid"
+          [xaxis]="gamesCreatedChart.xaxis"
+          [yaxis]="gamesCreatedChart.yaxis"
+          [markers]="gamesCreatedChart.markers"
+          [legend]="gamesCreatedChart.legend"
+          [stroke]="gamesCreatedChart.stroke"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Growth Of Games Played</h6>
+        <apx-chart
+          [series]="gamesPlayedChart.series"
+          [chart]="gamesPlayedChart.chart"
+          [colors]="gamesPlayedChart.colors"
+          [grid]="gamesPlayedChart.grid"
+          [xaxis]="gamesPlayedChart.xaxis"
+          [yaxis]="gamesPlayedChart.yaxis"
+          [markers]="gamesPlayedChart.markers"
+          [legend]="gamesPlayedChart.legend"
+          [stroke]="gamesPlayedChart.stroke"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+  </div>
+  <hr class="bottomLine">
+
+  <div class="row">
+    <div class="col-xl-4 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Top 10 Most Popular Subjects</h6>
+          <apx-chart
+          [series]="donutChart.series"
+          [chart]="donutChart.chart"
+          [colors]="donutChart.colors"
+          [stroke]="donutChart.stroke"
+          [labels]="donutChart.labels"
+          [legend]="donutChart.legend"
+          [dataLabels]="donutChart.dataLabels"
+          [grid]="donutChart.grid"
+        ></apx-chart>
+  
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">User Subscribed/Unsubscribed</h6>
+  
+          <apx-chart
+            [series]="userSubscrivedChart.series"
+            [chart]="userSubscrivedChart.chart"
+            [colors]="userSubscrivedChart.colors"
+            [stroke]="userSubscrivedChart.stroke"
+            [labels]="userSubscrivedChart.labels"
+            [legend]="userSubscrivedChart.legend"
+            [dataLabels]="userSubscrivedChart.dataLabels"
+            [grid]="userSubscrivedChart.grid"
+            
+          ></apx-chart>
+  
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Top 3 Most Played Games</h6>
+          <div class="card" style="margin-top: 10px;" *ngFor="let data of top3GamesData let i = index">
+            <div class="row paylistInfor" >
+              <div class="col-md-4">
+                <div class="image-box" id=`backgroundImage-{{data.id}}` [style.backgroundImage]="handleBackImg(data.templates.templates)"
+                >
+               
+                    <img *ngIf="data.subjectIcon == ''" src="../../../../../assets/images/playlist.png" style="width: 90px;" alt="" class="event-img" />
+                    <img src="{{data.subjectIcon}}" style="width: 90px;" alt="" class="event-img" />
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h6 class="model-title model-subheading1" style="display: flex; align-items: center;">
+                  <a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a>
+                </h6>
+                <p class="game-subtitle1">{{data.subject}} | {{data.totalTerms}} terms</p>
+                <p class="game-subtitle">{{data.templates.templates }}</p>
+                <div class="row">
+                  <!-- Rating Section -->
+                  <div class="col-md-3">
+                    <img src="{{data.createdByImageUrl}}" style="width: 100%; border-radius: 20px;" alt="" class="event-img" />
+                    </div>
+                    <div class="col-md-6 userName" >
+                      <p class="userImage"><a style="color: black;" href="https://admin-gamodify.immodesta.com/user/view/{{data.createdById}}" target="_blank">{{data.createdBy}}</a></p>
+
+                      </div>
+                    </div>
+                <div class="rating">
+            
+                  <button class="rate">{{data.rating}} <img src="../../../../../assets/images/Star.png" alt="" style="width: 12px !important; margin-top: -3px !important;"></button>
+                  <!-- <span class="copy-icon" (click)="copyUrl(data.gameUrl, i)">
+                    <img src="../../../../../assets/images/gameIcon.png" alt="" style="width: 20px !important; margin-top: -3px !important;">
+                    <span *ngIf="copyGameUrl[i]" class="copy-tooltip">Copied</span>
+                </span>    -->
+                </div>
+              </div>
+              
+              </div>
+              <br>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+          [fullScreen]="true">
+          <p style="color: white"> Loading... </p>
+        </ngx-spinner>

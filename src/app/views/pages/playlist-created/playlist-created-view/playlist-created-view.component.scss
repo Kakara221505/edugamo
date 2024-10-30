@@ -1,0 +1,198 @@
+.export{
+    float: right;
+    color: white;
+    height: 50px;
+    width: 180px;
+    border-radius: 8px;
+    font-size: 17px !important;
+    margin-bottom: -20px !important;
+    }
+    .header{
+      font-size: 30px !important;
+    }
+    .btn i{
+      font-size: 22px !important;
+    }
+    .btn{
+      font-size: 22px !important;
+    }
+  .mdi-download{
+    font-size: 17px !important;
+  }
+  .btn-warning{
+      background-color: #FFCC00 !important;
+    }
+    .createdNextPage{
+      font-size: 20px !important;
+      margin-top: 10px !important;
+    }
+    .checkBoxSelect{
+      font-size: 20px !important;
+    
+    }
+    .playlistInformation{
+      margin-top: 40px !important;
+    }
+    .modal-title{
+      font-size: 27px !important;
+    }
+    .gameCreated{
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
+    }
+    .gameCreated h6{
+      font-size: 22px !important;
+      color: #1D1D1D;
+    }
+    .modal-header{
+      border-bottom: 1px solid #1D1D1D;
+    }
+   .gameViewColor{
+      color: #7E7E7E;
+    }
+    .close{
+      color: #FFCC00;
+      border: 2px solid #FFCC00;
+      border-radius: 8px !important;
+      width: 28px;
+      height: 28px;
+    }
+    .modal-header .close {
+      margin: 0;
+      padding: 0;
+      padding-top: 3px !important;
+  }
+  .btn-warning{
+    background-color: #FFCC00 !important;
+  }
+  .iconWidth{
+    display: flex !important; 
+    flex-wrap: nowrap !important;
+  
+  }
+  input[id="cb1"] + label {
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      border: 2px solid #FFCC00;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-bottom: -5px !important;
+    }
+    input[id="cb1"]:checked + label:after {
+      position: relative;
+      top: 2px;
+      left: 2px;
+      right: 2px ;
+      content: '\2714';
+      font-size: 14px;
+    }
+    input[id="cb1"] {
+      display: none;
+    }
+  input[id="cb2"] + label {
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      border: 2px solid #FFCC00;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-bottom: -5px !important;
+    }
+    input[id="cb2"]:checked + label:after {
+      position: relative;
+      top: 2px;
+      left: 2px;
+      right: 2px ;
+      content: '\2714';
+      font-size: 14px;
+    }
+    input[id="cb2"]{
+      display: none;
+    }
+    .information h6{
+      font-size: 18px !important;
+      margin-top: 10px !important;
+  }
+  .information label{
+    font-size: 18px !important;
+    color: #7E7E7E;
+  }
+  .basicInformation {
+    margin-top: 10px;
+  }
+  .subheading{
+    font-size: 1.4rem;
+    text-transform: inherit !important;
+  }
+  hr{
+    margin-top: 0 !important;
+    margin-bottom: 0px !important;
+  }
+  a{
+      cursor: pointer;
+      color: #FFCC00 !important;
+  
+  }
+  thead th{
+    font-size: 20px !important;
+    font-size: 17px !important;
+    padding: 0.4rem !important;
+    padding-left: -10px;
+  }
+  tbody td{
+    color: #7E7E7E;
+    font-size: 17px !important;
+    padding: 0.4rem !important;
+   padding-left: -10px;
+   
+  }
+  .underline{
+    text-decoration: underline !important;
+  }
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    border-bottom: 0px !important;
+    text-transform: capitalize;
+    color: black !important;
+  }
+  .tableheading{
+    padding-left: 10px;
+  }
+  .table td{
+    border-top: 0px !important;
+  }
+  .gameCreated{
+    margin-top: 16px !important;
+    margin-bottom: 10px !important;
+  }
+  .gameClass{
+    margin-left: -20px !important;
+  }
+  .createPlaylist{
+    color: white;
+    height: 40px;
+    width: 85%;
+    border-radius: 20px;
+    margin-left: 37px !important;
+  }
+  #statusChange{
+    width: 110px !important;
+    color: #1D1D1D;
+  }
+  .modal-sm{
+    width: 400px !important;
+  }
+  .filterSelected{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+  }
+  .gameUrl{
+    color: black !important;
+  }
+  .playList{
+    color: #7E7E7E !important;
+  }

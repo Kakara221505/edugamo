@@ -1,0 +1,25 @@
+.space{
+    color: black;
+    opacity: 1;
+    visibility: visible;
+    font-weight: 900;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.sidebar .sidebar-body {
+    max-height: calc(100% - 60px);
+    position: relative;
+    border-right: 1px solid #f2f4f9;
+    height: 100%;
+   
+    box-shadow: 0 8px 10px 0 rgba(183, 192, 206, 0.2);
+    background: rgba(255, 253, 244, 1) !important;
+}
+.sidebar .sidebar-body .sidebar-nav .nav-item.mm-activel{
+color: #FFCC00 !important;
+
+}
+.li.nav-item.ng-star-inserted{
+    margin-bottom: 8px !important;
+}

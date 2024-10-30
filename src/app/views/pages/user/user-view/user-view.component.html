@@ -1,0 +1,484 @@
+<div>
+    <h4 class="card-title header">View User
+        <div class="profile-pic" *ngIf="!showModel">
+            <img src= "{{imageUrl}}"alt="" class="imageurlForUser" (click)="openBasicModal(basicModal)">
+            
+    </div> 
+    <div class="profile-pic" *ngIf="showModel">
+        <img src= "{{imageUrl}}"alt="" class="imageurlForUser" (click)="openBasicModal(basicModalEdit)">
+        
+</div> 
+    
+        <div class="profile-pic" *ngIf="imageUrl === null && imageUrl == ''">
+            <img src= "../../../../../assets/images/Default image.png"alt="" class="imageurlForUser" >   
+    </div> 
+      </h4>
+      <button class="btn btn-warning export" type="submit" (click)="openVerticalCenteredModal()">
+        <i class="mdi mdi-download"></i> Export
+      </button>
+</div>
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title subheading">Basic Information</h6>
+          <hr>
+          <div class="row information">
+            <div class="col-md-2"><h6>ID</h6><label class="basicInformation">{{id}}</label></div>
+            <div class="col-md-2"><h6>Display Name</h6><label class="basicInformation">{{displayName}}</label></div>
+            <div class="col-md-2"><h6>First Name</h6><label class="basicInformation">{{firstName}}</label></div>
+            <div class="col-md-3"> <h6>Last Name</h6><label class="basicInformation">{{lastName}}</label></div>
+            <div class="col-md-3"><h6>Email Address</h6><label class="basicInformation">{{email}}</label></div>
+         </div>
+         <div class="row information">
+            <div class="col-md-2"><h6>Contact Number</h6><label class="basicInformation">+{{countryCode}}-{{mobileNo}}</label></div>
+            <div class="col-md-2"><h6>Subscription</h6><label class="basicInformation">{{plan}}</label></div>
+            <div class="col-md-2"><h6>User Banned</h6><label class="basicInformation" *ngIf="bannedUser">Yes</label><label class="basicInformation" *ngIf="!bannedUser">No</label></div>
+            <div class="col-md-3"> <h6>Date Of Joining</h6><label class="basicInformation">{{dateOfJoining | date : 'medium' }}</label></div>
+            <div class="col-md-3"><h6>Last Active Date</h6><label class="basicInformation">{{lastActiveDate | date : 'medium'}}</label></div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gameInformation">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title subheading">Game Information</h6>
+          <hr>
+          <div class="row information">
+            <div class="col-md-4"><h6>Total Games Created</h6><label>{{totalGameCreated}}</label></div>
+            <div class="col-md-4"><h6>Total Games Played</h6><label>{{score}}</label></div>
+            <div class="col-md-4"><h6>Top 3 Most Played Subjects</h6><label>{{top3PlayedSubjects}}</label></div>
+          </div>
+          <div class="row information">
+            <div class="col-md-4"><h6>Top 3 Most Played Games</h6><label>{{top3Playedgame}}</label></div>
+            <div class="col-md-4"><h6>Top Tags</h6><label>{{topTags}}</label></div>
+            <div class="col-md-4"> <h6>Total Games Banned</h6><label>{{totalGamesBanned}}</label></div>
+         </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tabs -->
+
+  <div class="btn-group btn-group-lg mx-16" role="group" aria-label="Basic example" style="width:100%">
+    <button type="button" class="btn btn-outline-warning  button "  mat-raised-button (click)="getData((this.data = 'Games'))" [ngClass]="{ active: isData == 1 || isData == 7 || isData == 8 || isData == 9 }">Games</button>
+    <button type="button"  class="btn btn-outline-warning  button "  mat-raised-button  (click)="getData((this.data = 'Playlist'))" [ngClass]="{ active:isData == 2 }">Playlist</button>
+    <button type="button"  class="btn btn-outline-warning  button "  mat-raised-button (click)="getData((this.data = 'Favorites'))" [ngClass]="{ active:isData == 3 }">Favorites</button>
+    <button type="button"  class="btn btn-outline-warning  button "  mat-raised-button   (click)="getData((this.data = 'Profile'))" [ngClass]="{ active:isData == 4 }">Profile questionnaire</button>
+    <button type="button"  class="btn btn-outline-warning  button "  mat-raised-button  (click)="getData((this.data = 'Subscription'))" [ngClass]="{ active:isData == 5 }" >Subscription</button>
+    <!-- <button type="button" class="btn btn-secondary  button">Products</button> -->
+</div>
+
+
+<!-- Tabs data Starts -->
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+     
+        
+        <div class="card">
+            <div class="card-body" >
+                   <!-- games data table start -->
+                <div class="btn-group btn-group-lg mx-16" role="group" aria-label="Basic example" style="width:100%" *ngIf="gameactive">
+                    <button type="button" class="btn btn-white buttonsize" (click)="getGameData((this.game = 'GamesCreated'))" [ngClass]="{ active: isData == 1 }">
+                        <span>Games created</span>
+                        <div class="underline" [ngClass]="{ active: isData == 1 }"></div>
+                        </button>
+                        <button type="button" class="btn btn-white buttonsize" (click)="getGameData((this.game = 'GamesPlayed'))" [ngClass]="{ active: isData == 7 }">
+                            <span>Games played</span>
+                            <div class="underline" [ngClass]="{ active: isData == 7 }"></div>
+                          </button>
+                          <button type="button" class="btn btn-white buttonsize" (click)="getGameData((this.game = 'GamesFlagged'))" [ngClass]="{ active: isData == 8 }">
+                            <span>Flagged games</span>
+                            <div class="underline" [ngClass]="{ active: isData == 8 }"></div>
+                          </button>
+                          <button type="button" class="btn btn-white buttonsize" (click)="getGameData((this.game = 'GamesUser'))" [ngClass]="{ active: isData == 9 }">
+                            <span>Flagged by {{ firstName }}</span>
+                            <div class="underline" [ngClass]="{ active: isData == 9 }"></div>
+                          </button>
+               
+                </div>
+                <div class="table-responsive" *ngIf="gamecreated">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>ID</th>
+                                <th>Game name</th>
+                                <th>Subject</th>
+                                <th>Total terms</th>
+                                <th>Created on</th>
+                                <th>Avg. Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData"  *ngFor="let data of gameCreate">
+                                <td>{{data.id}}</td>
+                                <td><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a></td>
+                                <td>{{data.subject}}</td>
+                                <td>{{data.totalTerms}}</td>
+                                <td>{{data.createdOn | date : 'medium'}}</td>
+                                <td>{{data.rating}}</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="table-responsive" *ngIf="gameplayed">
+                    <table class="table ">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>ID</th>
+                                <th>Game name</th>
+                                <th>Subject</th>
+                                <th>Total terms</th>
+                                <th>Created by</th>
+                                <th>Played on</th>
+                                <th>Avg. Rating</th>
+                                <th>Performance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of gamePlayed">
+                                <td>{{data.id}}</td>
+                                <td><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a></td>
+                                <td>{{data.subject}}</td>
+                                <td>{{data.totalTerms}}</td>
+                                <td>{{data.createdBy}}</td>
+                                <td>{{data.playedOn | date : 'medium'}}</td>
+                                <td>{{data.rating}}</td>
+                                <td>{{data.performance}}%</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="table-responsive" *ngIf="gameflagged">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>ID</th>
+                                <th>Game name</th>
+                                <th>Subject</th>
+                                <th>Total terms</th>  
+                                <th>No. of times game flagged</th>
+                                <th>Avg. Rating</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of flaggedGames">
+                                <td>{{data.id}}</td>
+                                <td><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a></td>
+                                <td>{{data.subject}}</td>
+                                <td>{{data.totalTerms}}</td>
+                               
+                                <td>{{data.totalGamesFlagged}}</td>
+                                <td>{{data.rating}}</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <div class="table-responsive" *ngIf="gameuser">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>ID</th>
+                                <th>Game name</th>
+                                <th>Subject</th>
+                                <th>Total terms</th>  
+                                <th>Created by</th>
+                                <th>Flagged on</th>
+                                <th>Avg. Rating</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of flaggedGamesByUserName">
+                                <td>{{data.id}}</td>
+                                <td><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a></td>
+                                <td>{{data.subject}}</td>
+                                <td>{{data.totalTerms}}</td>
+                                <td>{{data.createdBy}}</td>
+                                <td>{{data.flaggedOn | date : 'medium'}}</td>
+                                <td>{{data.rating}}</td>
+                                
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <!-- gmaes data table End -->
+
+             <!-- playlist data table start -->
+
+                <div class="table-responsive" *ngIf="playlistactive">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th class="thead">Playlist</th>
+                                <th class="thead">Total games</th>
+                                <th>View games</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of playList">
+                                <td><a style="color: black;" href="{{data.playlistUrl}}" target="_blank">{{data.playlist}}</a></td>
+                                <td>{{data.totalGames}}</td>
+                                <td><a  (click)="viePlayList(basicModal,data.id)"><div class="col-sm-6 col-md-4 col-lg-3">
+                                    <i class="mdi mdi-eye eye"></i> 
+                                  </div></a></td>
+                                  
+<!-- PlayList Model -->
+
+<ng-template #basicModal let-modal>
+    
+    <div class="modal-content custom-modal-content">
+      <div class="modal-header ">
+        <h4 class="modal-title model-header1" id="exampleModalLabel">{{data.playlist}}</h4>
+        
+        <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <span class="underLine"></span>
+      <div class="modal-body">
+      <h6 class="modal-title model-subheading" id="exampleModalLabel">Added Games</h6>
+        <div class="card" style="margin-top: 10px;" *ngFor="let data of playlistInfo">
+        <div class="row paylistInfor" >
+          <div class="col-md-4">
+            <div class="image-box"id=`backgroundImage-{{data.id}}` [style.backgroundImage]="handleBackImg(data.template.title)">
+                <img src="{{data.subjectIcon}}" style="width: 117px;" alt="" class="event-img" />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h6 class="model-title model-subheading1"><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.title}}</a></h6>
+            <p class="game-subtitle1">{{data.template.title }} | {{data.totalTerms}} terms</p>
+            <div class="imageAdd">
+                <img src="{{data.userCreatedImage}}" alt="">
+            <p class="game-subtitle">{{data.userName}}</p>
+        </div>
+            <div class="rating">
+        
+              <button class="rate">{{data.rating}} <img src="../../../../../assets/images/Star.png" alt=""></button>
+             
+            </div>
+          </div>
+          
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+</ng-template>
+                             
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+             <!-- playlist data table end -->
+
+            <!-- favorites data table start -->
+
+                <div class="table-responsive" *ngIf="favorites">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>ID</th>
+                                <th>Game name</th>
+                                <th>Subject</th>
+                                <th>Total terms</th>  
+                                <th>Created by</th>
+                                <th>Favorited on</th>
+                                <th>Avg. Rating</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of favorite">
+                                <td>{{data.id}}</td>
+                                <td><a style="color: black;" href="{{data.gameUrl}}" target="_blank">{{data.gameName}}</a></td>
+                                <td>{{data.subject}}</td>
+                                <td>{{data.totalTerms}}</td>
+                                <td>{{data.createdBy}}</td>
+                                <td>{{data.favoritedOn | date : 'medium'}}</td>
+                                <td>{{data.rating}}</td>
+                                
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+            <!-- profile data table start -->
+                
+                <div class="table-responsive" *ngIf="profile">
+                    <table class="table">
+                        <thead>
+                            <tr class="tableheading">
+                                <th class="profile">Question</th>
+                                <th>Response</th>
+                                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tableData" *ngFor="let data of profileData">
+                                <td>{{data.question}}</td>
+                                <td>{{data.answer}}</td>
+                                
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+            <!-- profile data table end -->
+
+             <!-- subscription data table start -->
+
+            <div class="table-responsive" *ngIf="subscription">
+                <table class="table">
+                    <thead>
+                        <tr class="tableheading">
+                            <th class="subscription">Subscription</th>
+                            <th class="subscription">Type</th>
+                            <th class="subscription">Amount</th>
+                            <th class="subscription">Date purchased</th>
+                            <th>Expiry</th>
+                            <th>Status</th>
+                            <th>Remarks</th>
+                            <th>Reference</th>
+                           
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  class="tableData" *ngFor="let subscriptionData of subscriptions">
+                            <td>{{subscriptionData.plan}}</td>
+                            <td>{{subscriptionData.type}}</td>
+                            <td>{{subscriptionData.amount}}</td>
+                            <td>{{subscriptionData.purchasedOn | date : 'medium'}}</td>
+                            <td>{{subscriptionData.expiryAt}}</td>
+                            <td>{{subscriptionData.status}}</td>
+                            <td>{{subscriptionData.remarks}}</td>
+                            <td>{{subscriptionData.referenceId}}</td> 
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+
+               <!-- subscription data table end -->
+            </div>
+            
+        </div>
+        <!-- <pagination-controls (pageChange)="pageChangeEvent5($event)"></pagination-controls> -->
+    </div>
+    </div>
+
+    <!-- Tabs data end -->
+
+
+    <ng-template #basicModal let-modal>
+        <div class="modal-header deleteImage ">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body imageSize">
+            <img src="{{imageUrl}}" alt="">
+          </div>
+          <div class="deleteButton">
+            <button type="button" class="btn btn-primary" (click)="modal.close('by: close icon')" (click)="removeUserImage()"><i class="mdi mdi-delete"></i>Delete profile image</button>
+          </div>
+      </ng-template>
+
+      <ng-template #basicModalEdit let-modal>
+        <div class="modal-header deleteImage">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body imageSize">
+          <img [src]="editedImageUrl || imageUrl" alt="">
+        </div>
+        <div class="row">
+          <div class="col-xl-12 text-center">
+            <div class="circular-icons">
+                <label for="imageInput" class="icon-circle edit-icon">
+                    <input type="file" id="imageInput" accept="image/png, image/jpeg" style="display: none"  (change)="previewImage($event)">
+                    <i class="mdi mdi-pencil"></i>
+                  </label>
+                  
+              <div class="icon-circle delete-icon" (click)="modal.close('by: close icon')" (click)="removeUserImage()">
+                <i class="mdi mdi-delete"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      
+      
+      
+
+
+<!-- Modal -->
+<!-- Export Document Model -->
+<ng-template #verticalCenteredModal let-modal>
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Export User List</h4>
+          <hr>
+          <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select class="form-select form-select-lg mb-3 filterSelected" aria-label=".form-select-lg example">
+            <option selected>Select Export type</option>
+            <option value="1">Daily</option>
+            <option value="2">Week to date</option>
+            <option value="3">Month to date</option>
+            <option value="4">Last month</option>
+            <option value="5">Year to date</option>
+            <option value="6">Previous year</option>
+            <option value="6">All time</option>
+            <option value="6">Custom date</option>
+          </select>
+        </div>
+       
+        <!-- <div class="input-group dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-primary btn-icon calendar" type="button" (click)="d.toggle()">
+                <i data-feather="calendar" appFeatherIcon></i>
+              </button>
+            </div>
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                name="dp" [(ngModel)]="currentDate" ngbDatepicker #d="ngbDatepicker">
+          </div> -->
+        <div class="modal-footer d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-warning btn-lg rounded-corners" (click)="export()">Export</button>
+          </div>
+      </div>
+    
+  </ng-template>
+
+
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#ffbd00" type = "ball-clip-rotate-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+
+  
+
+      

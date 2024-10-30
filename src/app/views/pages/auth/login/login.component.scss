@@ -1,0 +1,154 @@
+:host {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  margin-bottom: 15px;
+}
+.input-box[_ngcontent-dxv-c121] {
+  height: 49px !important;
+  /* width: 584px; */
+  border-radius: 10px !important;
+}
+
+.mb-4, .my-4 {
+  margin-bottom: 0.5rem !important;
+  font-size: 35px !important;
+    font-weight: 600 !important;
+    line-height: 47px !important;
+}
+.data{
+  padding-bottom: 0px !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 31px !important;
+  
+}
+.heading{
+  text-align: center !important;
+  padding-bottom: 20px;
+   
+}
+.labelhead{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  margin-top: 35px;
+}
+.labelheadpass{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+input.ng-touched.ng-invalid{
+  border: 1px solid red;
+  box-shadow: 0 0 13px inset rgb(183, 70, 52);
+}
+.mt-5, .my-5 {
+  margin-top: 4.5rem !important;
+}
+.logo{
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  
+}
+.bg-space {
+  background-image: linear-gradient(to bottom, #FFCC00 , rgba(255, 248, 227, 1));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.text-white {
+  color: white;
+}
+
+.input-box {
+  height: 40px;
+}
+
+.btn-login {
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  background-color: #FFCC00 
+}
+.btn-verify {
+  height: 50px;
+  color: white;
+  background-color: #FFCC00;
+  border-radius: 22px;
+}
+
+.space{
+  background-color: #FFCC00 
+}
+.full-width {
+  width: 100%;
+  color: white;
+}
+.form{
+  padding-top: 2rem !important;
+}
+.content{
+  padding-bottom: 0px;
+    font-size: 18px;
+}
+
+
+.ng-otp-input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ng-otp-input input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.erros-valid{
+  color: red;
+}
+
+.ng-otp-input input:focus {
+  border-color: #FFCC00;
+  outline: none;
+}
+
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 40px; /* Adjust as needed */
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.mdi-email::before {
+ color:  #FFCC00 ;
+}
+.mdi-lock-outline::before {
+  color: #FFCC00 ;
+}

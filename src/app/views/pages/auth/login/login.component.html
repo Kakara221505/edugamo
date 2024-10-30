@@ -1,0 +1,194 @@
+
+<!-- login page -->
+<div class="row w-100 mx-0 auth-page" *ngIf="formStyle">
+  <div class="col-md-6 col-lg-4 mx-auto">
+  
+   
+    <div class="card bg-space">
+      <div class="card-body">
+        <h4 class="text-left mb-4">Login to Your Account</h4>
+        <p class="text-left data">Please enter your email address and password to continue</p>
+        <form class="forms-sample" (ngSubmit)="onLoggedin(loginForm)" #loginForm="ngForm">
+          <div class="form-group position-relative">
+            <label for="exampleInputEmail1" class="labelhead">Email Address</label>
+            <div class="input-icon">
+              <i class="mdi mdi-email"></i>
+              <input type="email" class="form-control input-box" id="exampleInputEmail1"
+                     [(ngModel)]="user.emailOrMobile" ngModel name="emailOrMobile" placeholder="Email" required
+                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+            </div>
+            <div class="mt-1" *ngIf="submitted && loginForm.controls['emailOrMobile'].hasError('required')">
+              <p class="erros-valid"><i class="fa-solid fa-circle-exclamation"></i> Email is required.</p>
+            </div>
+            <div class="mt-1" *ngIf="submitted && loginForm.controls['emailOrMobile'].hasError('pattern')">
+              <p class="erros-valid"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email.</p>
+            </div>
+          </div>
+          <div class="form-group position-relative">
+            <label for="exampleInputPassword1"  class="labelheadpass">Password</label>
+            <div class="input-icon">
+              <i class="mdi mdi-lock-outline icon"></i>
+              <input type="password" class="form-control input-box" id="exampleInputPassword1" autocomplete="current-password"
+                     [(ngModel)]="user.password" ngModel name="password" placeholder="Password" required>
+              <span class="password-toggle-icon" (click)="togglePassword()">
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </div>
+            <div class="mt-1" *ngIf="submitted && loginForm.controls['password'].hasError('required')">
+              <p class="erros-valid"><i class="fa-solid fa-circle-exclamation"></i> Password is required.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-warning btn-block btn-login">Login</button>
+          </div>
+        </form>
+        <div class="mt-4">
+        <button type="submit" class="btn btn-warning btn-block btn-login" (click)="goToForget()">Forget Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- otp page -->
+
+<!-- OTP page -->
+<div class="row w-100 mx-0 auth-page" *ngIf="otpStyle">
+  <div class="col-md-6 col-lg-4 mx-auto">
+    <div class="card bg-space">
+      <div class="card-body">
+        <h4 class="text-left mb-4">Enter Verification Code</h4>
+        <p class="text-left content">Enter the verification code that we have sent to the email address {{user.emailOrMobile}}</p>
+        
+        <!-- Email OTP -->
+        <form class="forms-sample" [formGroup]="otpForm" (ngSubmit)="onLoggedinOtp()">
+          <div class="form-group">
+            <h6 for="exampleInputEmail1">Enter the email OTP code</h6>
+            <ng-otp-input
+            #otpInput
+            (onInputChange)="onOtpChange($event)"
+            formControlName="emailOtp"
+            ngDefaultControl
+            [config]="{ length: 4, allowNumbersOnly: true, disableAutoFocus: false }"
+            (keyup)="keyFuncOtp($event)"
+          ></ng-otp-input>
+            <div class="mt-1" *ngIf="submitted && o['emailOtp'].invalid">
+              <p *ngIf="o['emailOtp'].errors && o['emailOtp'].errors['required']" class="erros-valid">
+                <i class="fa-solid fa-circle-exclamation"></i> Please Enter 4 Digit Code.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Phone OTP -->
+          <div class="form-group mt-4">
+            <h6 for="exampleInputPhoneOtp">Enter the phone OTP code</h6>
+            <ng-otp-input
+            #phoneOtpInput
+              (onInputChange)="onPhoneOtpChange($event)"
+              formControlName="otp" 
+              ngDefaultControl
+              [config]="{ length: 4, allowNumbersOnly: false,disableAutoFocus: true }"
+              (keyup)="keyFuncPhoneOtp($event)"
+            ></ng-otp-input>
+            <div class="mt-1" *ngIf="submitted && o['otp'].invalid"> <!-- Corrected form control name -->
+              <p *ngIf="o['otp'].errors && o['otp'].errors['required']" class="erros-valid">
+                <i class="fa-solid fa-circle-exclamation"></i> Please Enter 4 Digit Code.
+              </p>
+            </div>
+          </div>
+          
+          <div class="mt-5">
+            <button type="submit" class="btn btn-warning btn-block btn-verify">Verify</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Forgate password page  -->
+<div class="row w-100 mx-0 auth-page" *ngIf="forget">
+  <div class="col-md-6 col-lg-4 mx-auto">
+    <!-- <div class="heading">
+      <img src="../../../../../assets/images/logo.png" style="width: 250px;" alt="" class="event-img" />
+    </div> -->
+   
+    <div class="card bg-space">
+      <div class="card-body">
+        <h4 class="text-left mb-4">Forget Password</h4>
+        <p class="text-left data">Please enter your email address to reset your password</p>
+        <form class="forms-sample" #forgetForm="ngForm">
+          <div class="form-group position-relative">
+            <label for="exampleInputEmail1" class="labelhead">Email Address</label>
+            <div class="input-icon">
+              <i class="mdi mdi-email"></i>
+              <input type="email" class="form-control input-box" id="exampleInputEmail1"
+                     [(ngModel)]="user.emailOrMobile" ngModel name="emailOrMobile" placeholder="Email" required
+                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+            </div>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-warning btn-block btn-login" (click)="forgetpass()">Verify Email</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- forget password verify otp -->
+
+<div class="row w-100 mx-0 auth-page" *ngIf="verify">
+  <div class="col-md-6 col-lg-4 mx-auto">
+    <!-- <div class="heading">
+      <img src="../../../../../assets/images/logo.png" style="width: 250px;" alt="" class="event-img" />
+    </div> -->
+    <div class="card bg-space">
+      <div class="card-body">
+        <h4 class="text-left mb-4">Enter Verification Code</h4>
+        <p class="text-left content">Enter the verification code that we have sent to the email address {{user.emailOrMobile}} </p>
+        <form class="forms-sample"  #newPass="ngForm" >
+          <div class="form-group">
+            <h6 for="exampleInputEmail1">Enter the email OTP code</h6>
+            <ng-otp-input
+            #otpInput
+            (onInputChange)="onOtpChange($event)"
+            formControlName="emailOtp"
+            ngDefaultControl
+            [config]="{ length: 4, allowNumbersOnly: true, disableAutoFocus: false }"
+            (keyup)="keyFuncOtp($event)"
+          ></ng-otp-input>
+          </div>
+          <div class="form-group mt-4">
+            <h6 for="exampleInputPhoneOtp">Enter the phone OTP code</h6>
+            <ng-otp-input
+            #phoneOtpInput
+              (onInputChange)="onPhoneOtpChange($event)"
+              formControlName="otp" 
+              ngDefaultControl
+              [config]="{ length: 4, allowNumbersOnly: false,disableAutoFocus: true }"
+              (keyup)="keyFuncPhoneOtp($event)"
+            ></ng-otp-input>
+          </div>
+          <div class="form-group position-relative">
+            <label for="exampleInputPassword1"  class="labelheadpass">Enter New Password</label>
+            <div class="input-icon">
+              <i class="mdi mdi-lock-outline icon"></i>
+              <input type="text" class="form-control input-box" id="exampleInputPassword1"
+              [(ngModel)]="newPassword" ngModel name="newPassword" placeholder="Password" required>
+              <span class="password-toggle-icon" >
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </div>
+          <div class="mt-5">
+            <button type="submit" class="btn btn-warning btn-block btn-verify" (click)="OtpPassChange()"> Confirm Password </button>
+          </div>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+

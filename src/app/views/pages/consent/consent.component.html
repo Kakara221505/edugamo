@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Consent Log
+                    <form class="search-form">
+                        <div class="input-group border rounded-sm searchbutton">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text2 border-0 rounded-sm">
+                                    <i class="feather icon-search  cursor-pointer"></i>
+                                </div>
+                            </div>
+                            <input type="text" class="rounded-sm" id="searchForm" placeholder="Search" name="cosentKeyword"
+                            #cosentKeyword [(ngModel)]="filter.keyword" (keyup)="getAllConsent()">
+                        </div>
+                    </form>
+                
+                    <button class="btn btn-warning export2" type="submit" (click)="export()"> <i class="mdi mdi-download"></i>
+                        Export
+                    </button>
+                </h4>
+                
+                <hr>
+                <h4 class="filter">Filters :</h4>
+                    <form name="form" style="padding-bottom: 20px; margin-top: 20px !important;" name="form">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label labelhead">Date </label>
+                                    <form class="form-inline">
+                                        <div class="form-group">
+                                            <div class="input-group" >
+                                                <input class="form-control" placeholder="yyyy-mm-dd" [maxDate]="maxDate" 
+                                                    name="dp" [(ngModel)]="selectDate" ngbDatepicker
+                                                    #d="ngbDatepicker">
+                                                    
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-light btn-icon calendar"
+                                                        type="button" (click)="openDatePicker(d)">
+                                                        <i data-feather="calendar" appFeatherIcon
+                                                            class="text-secondary"></i>
+                                                    </button>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label labelhead">Category</label>
+                                    <select name="categorySelect" id="" name="selectCategory" #selectCategory="ngModel" class="filterSelected"
+                                    [(ngModel)]="category">
+                                        <option value="all" >All </option>
+                                        <option value="gameCreationTerms">Game Creation Terms</option>
+                                        <option value="lastLogin ">Last Login</option>
+                                        <option value="game">Game</option>
+                                        <option value="subject">Subject</option>
+                                        <option value="templates">Template</option>
+                                        <option value="ratings">Ratings</option>
+                                        <option value="totalGamePlays">Total Game Plays</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <div class="form-group" style="padding-top: 30px;">
+                                    <button class="btn btn-warning btn-apply" type="submit" (click)="getAllConsent()">Apply</button>
+                                    &nbsp;&nbsp;<button type="reset" class="btn btn-light btn-reset" (click)="reset()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                <div class="table-responsive" style="padding-top: 30px; ">
+                    <table class="table ">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>Id</th>
+                                <th>Display Name <div class="ascending1"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt="" (click)="ascending1()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending2()"></div></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email Address <div class="ascending2"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending3()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending4()"></div></th>
+                                <th>Contact Number</th>
+                                <th>IP Address</th>
+                                <th>Device Type / Name <div class="ascending3"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending5()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending6()"></div></th>
+                                <th>Game Creation Terms<div class="ascending4"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending7()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;"(click)="ascending8()" ></div></th>
+                                <th>Terms & Conditions<div class="ascending5"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending9()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending10()"></div></th>
+                                <th>First login<div class="ascending6"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending11()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending12()"></div></th>
+                                <th>Last Login<div class="ascending7"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending13()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;"(click)="ascending14()" ></div></th>
+                                <th>Privacy Policy<div class="ascending8"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending15()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending16()"></div></th>
+                                <th>Cookies consent<div class="ascending9"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending17()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending18()"></div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let list of consentData | paginate
+                            : {itemsPerPage: this.filterObj.limit, currentPage: this.filterObj.p,totalItems: copyArr }">
+                          
+                                <td>{{list.id}}</td>
+                                <td>{{list.displayName}}</td>
+                                <td>{{list.firstName}}</td>
+                                <td>{{list.lastName}}</td>
+                                <td>{{list.email}}</td>
+                                <td>{{list.contactAddress}}</td>
+                                <td>{{list.ipAddress}}</td>
+                                <td>{{list.deviceType}}</td>
+                                <td>{{ list.gameCreationTerms !== '-' ? (list.gameCreationTerms | date : 'medium') : '-' }}</td>
+                                <td>{{list.termsAndCondition | date : 'medium'}}</td>
+                                <td>{{list.firstLogin | date : 'medium'}}</td>
+                                <td>{{list.lastLogin | date : 'medium'}}</td>
+                                <td>{{list.privacyPolicy | date : 'medium'}}</td>
+                                <td>{{list.cookieConsent | date : 'medium'}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="mt-20">
+                        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+[fullScreen]="true">
+<p style="color: white"> Loading... </p>
+</ngx-spinner>

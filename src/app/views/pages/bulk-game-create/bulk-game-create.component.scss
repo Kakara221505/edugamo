@@ -1,0 +1,134 @@
+.export{
+    float: right;
+}
+.icon{
+    color: #FFCC00;
+    font-size: 20px !important;
+}
+.export{
+  float: right;
+  color: white;
+ padding: 11px !important;
+  border-radius: 8px;
+  margin-top: -15px;
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+.export2{
+  float: right;
+  color: white;
+ padding: 10px !important;
+  border-radius: 8px;
+  margin-right: 20px !important;
+  margin-top: -15px;
+  }
+  .card .card-title {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    text-transform: capitalize !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    margin-top: 30px !important;
+  }
+  hr{
+    margin-top: 2rem !important;
+    margin-bottom: 0rem !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .eye{
+    width: 30px !important;
+    height: 15px !important;
+  }
+  .modal-title{
+    font-size: 27px !important;
+  }
+  .gameCreated{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .gameCreated h6{
+    font-size: 22px !important;
+    color: #1D1D1D;
+  }
+  .modal-header{
+    border-bottom: 1px solid #1D1D1D;
+  }
+ .gameViewColor{
+    color: #7E7E7E;
+  }
+  .close{
+    color: #FFCC00;
+    border: 2px solid #FFCC00;
+    border-radius: 8px !important;
+    width: 28px;
+    height: 28px;
+  }
+  .modal-header .close {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px !important;
+}
+.btn-warning{
+  background-color: #FFCC00 !important;
+}
+.iconWidth{
+  display: flex !important; 
+  flex-wrap: nowrap !important;
+
+}
+.table thead th {
+  border-top: 0;
+  border-bottom-width: 1px;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #1D1D1D !important;
+}
+.table tbody td{
+  font-size: 15px !important;
+}
+
+.ascending2{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px !important;
+  margin-top: -15px !important;
+}
+.ascending1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px !important;
+  margin-top: -15px !important;
+}
+.ascending3{
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px !important;
+  margin-top: -15px !important;
+}
+.ascending4{
+  display: flex;
+  flex-direction: column;
+  margin-left: 123px !important;
+  margin-top: -15px !important;
+}
+.ascending5{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px !important;
+  margin-top: -15px !important;
+}
+.btn i{
+  font-size: 22px !important;
+}
+.btn{
+  font-size: 22px !important;
+}

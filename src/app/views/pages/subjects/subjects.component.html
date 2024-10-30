@@ -1,0 +1,273 @@
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Subjects
+                    <button type="button" class="btn btn-warning export" (click)="openBasicModal(basicModal)">
+                        <i data-feather="plus" appFeatherIcon class="icon"></i>Add new</button>
+                    <button class="btn btn-warning export2" type="submit" (click)="export()"> <i
+                            class="mdi mdi-download "></i>
+                        Export
+                    </button>
+                </h6>
+                <hr>
+                <h4 class="filter">Filters :</h4>
+                <div class="filterApply">
+                    <form name="form" style="padding-bottom: 20px;" name="form">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label labelhead">Subject</label>
+                                    <input type="text" class="form-control" name="subjectName" #subjectName="ngModel"
+                                        [(ngModel)]="filter.keyword" placeholder="Search Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="control-label labelhead">Status</label>
+                                    <select name="Last 7 days" class="filterSelected" name="statusSelect" #statusSelect="ngModel"
+                                        [(ngModel)]="filter.status">
+                                        <option value="all">All</option>
+                                        <option value="ACTIVE">Active</option>
+                                        <option value="INACTIVE">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label labelhead">Date </label>
+                                    <form class="form-inline">
+                                        <div class="form-group">
+                                            <div class="input-group" >
+                                                <input class="form-control" placeholder="yyyy-mm-dd" [maxDate]="maxDate"
+                                                    name="dp" [(ngModel)]="selectDate" ngbDatepicker #d="ngbDatepicker">
+
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-light btn-icon calendar"
+                                                        type="button" (click)="openDatePicker(d)">
+                                                        <i data-feather="calendar" appFeatherIcon
+                                                            class="text-secondary"></i>
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group" style="padding-top: 26px;">
+                                    <!-- <label class="control-label">&nbsp;</label><br/> -->
+                                    <button class="btn btn-warning btn-apply" type="submit"
+                                        (click)="getsubjectData()">Apply</button>
+                                    &nbsp;&nbsp;<button type="reset" class="btn btn-light btn-reset"
+                                        (click)="reSetForm()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-responsive" style="padding-top: 30px;">
+                    <table class="table ">
+                        <thead>
+                            <tr class="tableheading">
+                                <th>Id</th>
+                                <th>Subject<div class="ascending1"><img src="../../../../assets/images/Up.png"
+                                            style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;"
+                                            (click)="ascending1()" alt="">
+                                        <img src="../../../../assets/images/Down.png" alt=""
+                                            style="width: 9px !important; cursor: pointer;" (click)="ascending2()">
+                                    </div>
+                                </th>
+                                <th>No. of Games<div class="ascending2"><img src="../../../../assets/images/Up.png"
+                                            style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;"
+                                            alt="" (click)="ascending3()">
+                                        <img src="../../../../assets/images/Down.png" alt=""
+                                            style="width: 9px !important; cursor: pointer;" (click)="ascending4()">
+                                    </div>
+                                </th>
+                                <th>No. of Gameplays<div class="ascending3"><img src="../../../../assets/images/Up.png"
+                                            style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;"
+                                            alt="" (click)="ascending5()">
+                                        <img src="../../../../assets/images/Down.png" alt=""
+                                            style="width: 9px !important; cursor: pointer;" (click)="ascending6()">
+                                    </div>
+                                </th>
+
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let list of subjectList | paginate
+                            : {itemsPerPage: this.filterObj.limit, currentPage: this.filterObj.p,totalItems: copyArr };">
+                                <td>{{list.id}}</td>
+                                <td>{{list.title}}</td>
+                                <td>{{list.totalGames}}</td>
+                                <td>{{list.totalGameplay}}</td>
+
+                                <td><select class="sleectStatus filterSelected" name="changeStatus" id="filterSelected"
+                                        (change)="subjectStatusChange(list)" #statusSelect="ngModel"
+                                        [(ngModel)]="list.status">
+                                        <option value="ACTIVE">ACTIVE</option>
+                                        <option value="INACTIVE">INACTIVE</option>
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <a>
+                                        <div class="row">
+                                            <div class="col-md-4 icon">
+                                                <i class="mdi mdi-border-color eye"
+                                                    (click)="openBasicModal2(basicModalEdit)"
+                                                    (click)="subjectGetID(list.id)"></i>
+                                                <ng-template #basicModalEdit let-modal>
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Subject</h5>
+                                                        <button type="button" class="close"
+                                                            (click)="modal.close('by: close icon')" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form #subjectEditForm="ngForm">
+                                                            <div class="row subject">
+                                                                <label for="subject" class="subjectName"> Subject Name
+                                                                </label>
+                                                                <div class="input-group ">
+                                                                    <input type="text" class="Subject_name"
+                                                                        placeholder="Enter Subject Name"
+                                                                        name="nameSubject" #nameSubject="ngModel"
+                                                                        [(ngModel)]="title" required>
+                                                                </div>
+                                                                <label for="subject" class="subjectName"> Subject Icon
+                                                                </label>
+                                                                <div class="imageFile">
+                                                                <div class="subjectIconUrl">
+                                                                    <img src="{{imageUrl}}" alt=""> 
+                                                                </div>
+                                                            </div>
+                                                                <div class="input-group ">
+                                                                    <input type="file" class="Subject_name4"
+                                                                        placeholder="Please choose File" name="file"
+                                                                        #fileInput (change)="onFileSelected($event)"
+                                                                        accept=".jpg,.png,.svg,.gif,.img" >
+                                                                    <!-- <button>Upload</button> -->
+                                                                </div>
+                                                                <label for="subject" class="subjectName"> Status
+                                                                </label>
+                                                                <div class="input-group ">
+                                                                    <select class="Subject_name filterSelected"
+                                                                        aria-label=".form-select-lg example"
+                                                                        name="statusChange" #statusChange="ngModel" id="filterSelected"
+                                                                        required [(ngModel)]="status">
+                                                                        <option value="ACTIVE">Active</option>
+                                                                        <option value="INACTIVE">Inactive</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <button type="submit"
+                                                                    class="btn btn-warning buttonSelect"
+                                                                    [disabled]="subjectEditForm.invalid"
+                                                                    (click)="subjectEdit(list.id)"> Edit
+                                                                    subject</button>
+                                                                <button type="submit" class="cancelButton"
+                                                                    (click)="modal.close('by: close icon')"> Cancel
+                                                                </button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                </ng-template>
+                                            </div>
+                                            <div class="col-sm-4 col-md-4 col-lg-3">
+                                                <i class="mdi mdi-eye eye" (click)="openBasicModal3(basicModal2)"
+                                                    (click)="subjectView(list.id)"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-20">
+                        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #basicModal let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Subject</h5>
+            <button type="button"  (click)="modal.close('by: close icon')" 
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form #venueAddForm1="ngForm">
+                <div class="row subject">
+                    <label for="subject" class="subjectName"> Subject Name </label>
+                    <div class="input-group ">
+                        <input type="text" class="Subject_name" placeholder="Enter Subject Name" name="nameSubject"
+                            #nameSubject="ngModel" [(ngModel)]="title" autocomplete="off" required>
+
+                    </div>
+                    <label for="subject" class="subjectName"> Subject Icon </label>
+                    <div class="input-group ">
+                        <input type="file" class="Subject_name4" placeholder="Please choose File" name="file"
+                            (change)="uploadFile($event)" accept=".jpg,.png,.svg,.img,.gif" required>
+
+                    </div>
+                    <label for="subject" class="subjectName"> Status </label>
+                    <div class="input-group ">
+                        <select class="Subject_name filterSelected" aria-label=".form-select-lg example"  name="statusSelect"
+                            #statusSelect="ngModel" required [(ngModel)]="status" required autocomplete="off" >
+                            <option value="ACTIVE">Active</option>
+                            <option value="INACTIVE">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-warning buttonSelect" [disabled]="venueAddForm1.invalid"
+                        (click)="subjectAdd()" (click)="modal.close('by: close button')"> Add subject</button>
+                    <button type="submit" class="cancelButton" 
+                        (click)="modal.close('by: close icon')"> Cancel </button>
+                </div>
+            </form>
+        </div>
+    </ng-template>
+
+    <ng-template #basicModal2 let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">View Subject</h5>
+            <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12 gameCreated">
+                    <h6>Subject : <span class="gameViewColor"> {{subject}}</span></h6>
+                </div>
+                <div class="col-sm-12 gameCreated">
+                    <h6>No. Of Game : <span class="gameViewColor"> {{noOFGames}}</span></h6>
+                </div>
+                <div class="col-sm-12 gameCreated">
+                    <h6>No. Of Gameplays : <span class="gameViewColor"> {{totalGameplay}}</span></h6>
+                </div>
+                <div class="col-sm-12 gameCreated">
+                    <h6>Status : <span class="gameViewColor"> {{status}}</span></h6>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>

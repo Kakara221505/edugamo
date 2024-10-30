@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Game Template
+                    <button class="btn btn-warning export2" type="submit" (click)="export()"> <i class="mdi mdi-download"></i>
+                        Export
+                    </button>
+                </h6>
+              
+                <hr>
+                <div class="table-responsive" style="padding-top: 30px;">
+                    <table class="table ">
+                        <thead>
+                            <tr class="tableheading">
+                               
+                                <th>Template Name</th>
+                                <th>Total Games Played <div class="ascending"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt="" (click)= "ascending1()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)= "ascending2()"></div></th>
+                                <th>Total Games Created <div class="ascending"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt="" (click)= "ascending3()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)= "ascending4()"></div></th>
+                                <th>Status</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let list of templateList">
+                                
+                                <td>{{list.title}}</td>
+                                <td>{{list.totalGameplay}}</td>
+                                <td>{{list.totalGames}}</td> 
+                                <td>
+                                    <select name="changeStatus" class="statusChange filterSelected"
+                                     (change)="GameTemplateStatusChanged(list)"
+                                    name="statusSelect" #statusSelect="ngModel"
+                                    [(ngModel)]="list.status">
+                                    <option  value="ACTIVE">ACTIVE</option>
+                                    <option value="INACTIVE">INACTIVE</option>
+                                </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>

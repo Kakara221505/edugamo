@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-md-12 stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">User Playlist 
+            <!-- <form class="search-form">
+              <div class="input-group border rounded-sm searchbutton">
+                  <div class="input-group-prepend">
+                      <div class="input-group-text2 border-0 rounded-sm">
+                          <i class="feather icon-search  cursor-pointer"></i>
+                      </div>
+                  </div>
+                  <input type="text" class="rounded-sm" id="searchForm" placeholder="Search" name="ngModel" 
+                  [(ngModel)]="keywordSearch" (keyup)="searchFilter()" >
+              </div>
+          </form> -->
+            <button class="btn btn-warning export" type="submit" (click)="export()">
+                <i class="mdi mdi-download"></i> Export
+            </button>
+          </h4>
+         
+          <hr>
+          <h4 class="filter">Filters :</h4>
+          <div class="filterApply">
+            <form name="form" style="padding-bottom: 20px; margin-top: 20px !important;" #gameCreatedForm="ngForm">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <label class="control-label labelhead">Keyword </label>
+                    <input type="text" class="form-control" name="setCommission" #keyword="ngModel"
+                      placeholder="Search by playlist name, game name, user name , tags" [(ngModel)]="filter.keyword">
+                  </div>
+                </div>
+              
+                <div class="col-md-4">
+                  <div class="form-group" style="padding-top: 26px;">
+                   
+                    <button class="btn btn-warning btn-apply" type="submit" (click)="getAllPlaylist()">Apply</button>
+                    &nbsp;&nbsp;<button class="btn btn-light btn-reset" (click)="reSetForm()">Reset</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="table-responsive" style="padding-top: 30px;">
+            <table class="table ">
+                <thead>
+                  <tr class="tableheading" >
+                    <th>Id</th>
+                    <th>Playlist Name</th>
+                    <th>Game Name</th>
+                                <th>Tags</th>
+                                <th>Created By</th>
+                                <th>Total games<div class="ascending1"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending1()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending2()"></div></th>
+                                <th>Total users saved the playlist<div class="ascending2"><img src="../../../../assets/images/Up.png" style="width: 9px !important; margin-bottom: 3px !important; cursor: pointer;" alt=""(click)="ascending3()">
+                                    <img src="../../../../assets/images/Down.png" alt="" style="width: 9px !important; cursor: pointer;" (click)="ascending4()"></div></th>
+                                <th>Created on</th>
+                                <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let list of userPlayList | paginate
+                    : {itemsPerPage: this.filterObj.limit, currentPage: this.filterObj.p,totalItems: copyArr }">
+                    <td>{{list.id}} <img *ngIf="list.pro != false" class="proImage" src="../../../../assets/images/Pro badge.png" alt=""></td>
+                          <td><a style="color: black;" href="{{list.playlistUrl}}" target="_blank">{{list.playListName}}</a></td>
+                          <td><span *ngFor="let gameName of list.games">
+                            <p><a class="gameUrl" href="{{gameName.gameUrl}}" target="_blank">{{gameName.gameTitle}}</a></p>
+                          </span>
+                            </td>
+                          <td ><span *ngFor="let tag of list.playListTagsResponseDtos">
+                            <p>{{ tag.tags}}</p>
+                        </span></td>
+                        <td><a  href="/user/view/{{list.userId}}" class="viewButton" target="_blank">{{list.createdBy}}</a></td>
+                          <td>{{list.totalGames}}</td>
+                          <td>{{list.totalGamesSaved}}</td>
+                          <td>{{list.dateCreated | date : 'medium'}}</td>
+                        
+                          <td><a >
+                            <div class="iconsChnage">
+                            <div class="col-md-3 iconbtn">
+                              <i class="mdi mdi-eye eye" (click)="gotoView(list.id)"></i>
+                            
+                            </div>
+                            <div class="col-md-3 iconbtn">
+                              <i class="mdi mdi-delete deleteBtn" (click)="adminUserPlaylistDelete(list.id)"></i>
+                            </div>
+                          </div>
+                          </a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-20">
+              <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- <ng-template #basicModal let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">View Game</h5>
+        <button type="button" class="close" (click)="modal.close('by: close icon')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12 gameCreated">
+                <h6>Game Name : <span class="gameViewColor"> {{gameCreatedView}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Subject : <span class="gameViewColor">{{subject}}</span></h6>
+            </div>
+             <div class="col-sm-12 gameCreated">
+                <h6>Template : <span class="gameViewColor">{{template}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated" *ngFor="let list of tags">
+                <h6>Tags : <span class="gameViewColor">{{list.tags}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Created By : <span class="gameViewColor">{{createdBy}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Total Gameplays : <span class="gameViewColor">{{gamePlays}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Created On : <span class="gameViewColor">{{createdOn | date : 'medium'}}</span> </h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Total Favorites : <span class="gameViewColor">{{favouritedGames}}</span></h6>
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Game added in playlists : <span class="gameViewColor">{{playlistGames}}</span></h6> 
+            </div>
+            <div class="col-sm-12 gameCreated">
+                <h6>Avg. Ratings : <span class="gameViewColor">{{rating}}</span></h6> 
+            </div>   
+    </div>
+    </div>
+</ng-template> -->
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#ffbd00" type="ball-clip-rotate-multiple"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

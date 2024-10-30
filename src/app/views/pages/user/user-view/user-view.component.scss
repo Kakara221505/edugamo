@@ -1,0 +1,359 @@
+.export{
+    float: right;
+    color: white;
+    height: 50px;
+    width: 110px;
+    border-radius: 8px;
+    margin-top: -68px;
+    font-size: 17px !important;
+    
+  }
+.mdi-download{
+  font-size: 17px !important;
+}
+  .header{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 1.875rem;
+  }
+  .subheading{
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+    text-transform: capitalize !important;
+  }
+
+.button{
+     color: #FFCC00;
+    // border-radius: 10px;
+    // background-color: white;
+    
+}
+.button:hover{
+    color: white;
+    // background-color: #FFBD00;
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled).active, .show > .btn-outline-warning.dropdown-toggle {
+    color: white !important
+}
+
+.buttonsize{
+    font-size: 15px;
+}
+.buttonsize:hover{
+    color: #FFCC00 ;
+}
+.btn-white:not(:disabled):not(.disabled).active, .show > .btn-white.dropdown-toggle {
+    color: #FFCC00  !important
+}
+.modal-content{
+    width: 100% !important;
+}
+.rounded-corners {
+    border-radius: 20px; 
+    color: white;
+  }
+
+  .underLine{
+    border-bottom: 1px solid black;
+    margin-left: 20px !important;
+    margin-top: 15px !important;
+    width: 460px !important;
+   
+  }
+  .model-header1{
+    margin-left: 0px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .model-subheading{
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 18px;
+  }
+
+  .model-subheading1{
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 0px;
+  }
+
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize !important;
+    color: #1D1D1D;
+}
+
+  .btn-lg {
+    padding: 15px 30px; 
+    font-size: 18px; 
+  }
+  
+  .button-color {
+    color: white;
+    background-color: #FFCC00 ; 
+    border-color: #FFCC00 ; 
+  };
+
+  .btn-warning{
+    background-color: #FFCC00 !important;
+  
+  }
+  
+
+  .image-box {
+  width: 100px;
+  height: 100px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.game-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+   margin-left: -2px;
+}
+
+.game-subtitle {
+  font-size: 1rem;
+  color: #999;
+}
+.game-subtitle1 {
+    font-size: 15px;
+    color: #999;
+  }
+
+.game-name {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.rating {
+  margin-top: 10px;
+  color: #FFCC00 ;
+  
+}
+.icon-star{
+  margin-left: 3px !important;
+}
+
+.rate{
+    color: white;
+    background: black;
+    padding-top: 5px;
+    border-radius: 10px;
+    width: 65px;
+    border: none;
+}
+
+/* Additional styles for the modal body */
+.modal-body {
+  padding: 20px;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  padding-top: 25px !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.buttonsize span{
+font-size: 20px !important;
+}
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFCC00  ; /* Adjust color as needed */
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.tableheading th{
+  font-size: 14px !important;
+  text-transform: capitalize;
+}
+.tableData td{
+  font-size: 17px !important;
+  color: #1D1D1D;
+  
+}
+.buttonsize.active .underline {
+  opacity: 1;
+}
+
+.thead{
+  width: 18%;
+}
+.profile{
+  width: 60%;
+}
+.subscription{
+  width: 13%;
+}
+.information h6{
+  font-size: 20px !important;
+  margin-top: 10px !important;
+}
+.information label{
+  font-size: 19px !important;
+  color: #7E7E7E;
+}
+.basicInformation{
+  margin-top: 10px ;
+}
+.card{
+  border-radius: 25px !important;
+}
+.mdi-eye{
+  font-size: 25px !important;
+}
+.icon-star{
+  margin-top: 10px !important;
+}
+.close{
+  color: #FFCC00 ;
+  border: 2px solid #FFCC00 ;
+  border-radius: 8px !important;
+  width: 35px;
+  height: 32px;
+}
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+  padding-top: 3px !important;
+}
+hr{
+  color: #7E7E7E;
+}
+.gameInformation{
+  margin-top: -10px !important;
+}
+.modal-header{
+ margin-bottom: 20px !important;
+}
+.rate img{
+  width: 15px;
+    margin-top: -5px;
+}
+.paylistInfor{
+  margin-top: 15px !important;
+  margin-left: 10px !important;
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled).active{
+  background-color: #FFCC00 !important;
+  border-color: #FFCC00 !important;
+}
+
+.imageurlForUser{
+  width: 50px !important;
+  height: 50px !important;
+}
+.profile-pic {
+	position: relative;
+	display: inline-block;
+}
+
+.profile-pic:hover .edit {
+	display: block;
+}
+.imageSize img{
+  width: 150px !important;
+  height: 150px !important ;
+  border-radius: 80px !important;
+  border-bottom: 15px !important;
+}
+.imageSize{
+  text-align: center;
+}
+.deleteButton{
+  text-align: center;
+  margin-bottom: 20px !important;
+  color: #f2f2f2 !important;
+}
+.deleteButton .btn{
+  color: #f2f2f2 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  font-size: 23px !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.deleteButton .btn i{
+  font-size: 23px !important;
+  margin-right: 5px !important;
+}
+.modal-header{
+  margin-bottom: -30px !important;
+  border-bottom: none !important;
+}
+.imageAdd{
+  display: flex;
+}
+.imageAdd img{
+  width: 24px;
+    border-radius: 18px;
+}
+.imageAdd p{
+  margin-left: 10px !important;
+}
+.event-img{
+  width: 91px !important;
+  margin-left: 5px;
+  margin-top: 5px
+}
+.underline{
+  text-decoration: underline !important;
+}
+.filterSelected{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}
+
+/* Add this CSS in your stylesheet to style the circular icons and their container */
+
+.circular-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 35px;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background: #FFCC00;;
+  border-radius: 50%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-circle:before {
+  content: none !important;
+}
+
+.icon-circle i {
+  color: white;
+  font-size: 20px;
+}
+.gameUrl{
+  color: #000;
+}

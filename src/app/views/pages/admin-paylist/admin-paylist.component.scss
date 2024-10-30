@@ -1,0 +1,229 @@
+.export{
+    float: right;
+}
+.icon{
+    color: #FFCC00;
+    font-size: 20px !important;
+}
+.export{
+  float: right;
+  color: white;
+ padding: 11px !important;
+  border-radius: 8px;
+  margin-top: 0px !important;
+  }
+.export2{
+  float: right;
+  color: white;
+ padding: 10px !important;
+  border-radius: 8px;
+  margin-right: 20px !important;
+  margin-top: 0px;
+  }
+  .btn i{
+    font-size: 22px !important;
+  }
+  .btn{
+    font-size: 22px !important;
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+  .card .card-title {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    text-transform: capitalize !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    margin-top: 30px !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .eye{
+    width: 30px !important;
+    height: 15px !important;
+  }
+  .modal-title{
+    font-size: 30px !important;
+    font-weight: 800 !important;
+  }
+  .gameCreated{
+    margin-top: 16px !important;
+    margin-bottom: 10px !important;
+  }
+  .gameCreated h6{
+    font-size: 22px !important;
+    color: #1D1D1D;
+  }
+  .modal-header{
+    border-bottom: 1px solid #1D1D1D;
+  }
+ .gameViewColor{
+    color: #7E7E7E;
+  }
+  .close{
+    color: #FFCC00;
+    border: 2px solid #FFCC00;
+    border-radius: 8px !important;
+    width: 28px;
+    height: 28px;
+  }
+  .modal-header .close {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px !important;
+}
+.btn-warning{
+  background-color: #FFCC00 !important;
+}
+.iconWidth{
+  display: flex !important; 
+  flex-wrap: nowrap !important;
+}
+.search-form{
+    display: inline-block !important;
+}
+.searchbutton{
+  width: 366px !important;
+  margin-left: 40px !important;
+  height: 42px !important;
+  border: 1px solid #FFCC00 !important;
+  border-radius: 60px !important;
+}
+.input-group-text{
+    background-color: white !important;
+}
+.input-group-text2{
+   margin-left: 15px !important;
+   padding-top: 5px !important;
+}
+#searchForm{
+        border: none !important; 
+        width: 223px;
+        margin-left: 15px;
+        font-size: 20px;
+    }
+#playlisttitle{
+    width: 100%;
+    height: 50px;
+    background-color: #FFFDF6;
+    border-radius: 5px !important;
+    text-align: center;
+    font-weight: 600;
+    font-size: 19px !important;
+}
+
+#exampleModalLabel{
+  margin-left: 120px !important;
+  margin-bottom: -20px !important;
+  margin-top: 20px;
+}
+
+.modal-header{
+    border-bottom: none !important;
+}
+.float{
+    float: right;
+    font-size: 12px;
+    margin-top: 5px !important;
+}
+.proPlaylist{
+    font-weight: bold;
+    font-size: 18px !important;
+}
+.playlistChecked{
+    display: flex;
+}
+.createPlaylist{
+  color: white;
+  height: 50px;
+  width: 100%;
+  border-radius: 30px;
+  margin-right: 20px !important;
+}
+.addTag{
+    margin-top: -10px !important;
+}
+.addedSuccess{
+  font-size: 34px !important;
+  text-align: center !important;
+  margin-top: 100px !important;
+  margin-bottom: 50px !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  font-weight: 800;
+}
+.createPlaylistDone{
+  margin-bottom: 20px !important;
+  color: white;
+  height: 50px;
+  width: 75%;
+  border-radius: 40px;
+  margin-right: 31px !important;
+  margin-left: 60px;
+}
+.ascending2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 215px !important;
+    margin-top: -15px !important;
+  }
+  .ascending1{
+    display: flex;
+    flex-direction: column;
+    margin-left:  90px!important;
+    margin-top: -15px !important;
+  }
+  .togglebtn{
+    float: right !important;
+  }
+  .proPlaylistbtn{
+    margin-top: 20px !important;
+  }
+  .table thead th{
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #1D1D1D !important;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black;
+ 
+}
+.modal-sm{
+  max-width: 500px !important;
+}
+.modal-body{
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+.proImage{
+  width: 45px !important;
+  height: 26px !important;
+  margin-left: 40px;
+  float: right;
+}
+.finalButton1{
+  height: 52px;
+  width: 75%;
+  border-radius: 56px;
+  color: #FFCC00 ;
+  background-color: white;
+  border-color:#FFCC00 ;
+  margin-right: 31px !important;
+  margin-left: 60px;
+  margin-bottom: 100px !important;
+}
+#filterSelected{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}

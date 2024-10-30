@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ngx-toastr/toastr";
+
+
+.main-wrapper .page-wrapper .page-content {
+   
+    background: #fff !important;
+}
+// .ng-toggle-switch-core{
+//     background-color: yellow !important;
+//   }
+
+.eye{
+    color: #FFCC00;
+  }
+  
+app aw-wizard-navigation-bar.horizontal.large-filled ul.steps-indicator li.current .step-indicator {
+    background-color: red;
+}

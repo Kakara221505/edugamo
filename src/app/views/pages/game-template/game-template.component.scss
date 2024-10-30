@@ -1,0 +1,119 @@
+.labelhead{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+   
+  }
+  .export2{
+    float: right;
+    color: white;
+    padding: 10px !important;
+    border-radius: 8px;
+    margin-right: 20px !important;
+  }
+  hr{
+    margin-top: 3rem !important;
+    margin-bottom: 0rem;
+  }
+  .statusChange{
+    width: auto !important;
+    color: #000;
+  }
+  .filter{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .card-title{
+    font-size: 32px !important;
+    text-transform: capitalize !important;
+  }
+  .btn i{
+    font-size: 22px !important;
+  }
+  .btn{
+    font-size: 22px !important;
+  }
+  // .btn-reset {
+  //   width: 100%;
+  // }
+
+  .card-title1 {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+  }
+ 
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #1D1D1D !important;
+  }
+  .table tbody td{
+    font-size: 15px !important;
+  }
+  .table-responsive .ng-toggle-switch-core{
+    background-color: #FFCC00  !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+  .table-responsive .ng-toggle-switch-core{
+    background-color: #FFCC00 !important;
+  }
+  .ng-toggle-switch.true {
+    background-color:#FFCC00;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  
+  .btn-apply {
+    color: white;
+    width: 83px;
+    height: 40px;
+    background-color: #FFCC00;
+  }
+  
+  .btn-reset {
+    width: 83px;
+    height: 40px;
+    background-color: white;
+    border-color: #FFCC00;
+    color: #FFCC00;
+  }
+  .modal-content{
+      width: 100% !important;
+  }
+  .rounded-corners {
+      border-radius: 20px; 
+      color: white;
+    }
+    #statusCheck{
+        width: 100px !important;
+    }
+    .ascending{
+      display: flex;
+      flex-direction: column;
+      margin-left: 150px !important;
+      margin-top: -15px !important;
+    }
+    .btn-warning{
+      background-color: #FFCC00 !important;
+    }
+    .filterSelected{
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #ffffff;
+    }

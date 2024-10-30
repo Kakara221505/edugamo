@@ -1,0 +1,214 @@
+.labelhead{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+   
+  }
+  .filter{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .viewButton{
+    text-decoration: underline !important;
+    color: #000;
+  }
+  .viewBtn{
+    text-decoration: underline !important;
+    color: #000;
+  }
+  // .btn-reset {
+  //   width: 100%;
+  // }
+  .btn-apply {
+    color: white;
+    padding: 10px;
+    background-color: #FFCC00;
+    font-size: 16px !important;
+  }
+  #statusChange{
+    color: #000;
+    width: auto !important;
+  }
+  
+  .btn-reset {
+   padding: 10px;
+    background-color: white;
+    border-color: #FFCC00;
+    color: #FFCC00;
+    font-size: 16px !important;
+  }
+  .card-title{
+    font-size: 32px !important;
+    text-transform: capitalize;
+  }
+  .card-title1 {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+  }
+  hr{
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .ascending2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px !important;
+    margin-top: -15px !important;
+  }
+  .ascending1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px !important;
+    margin-top: -15px !important;
+  }
+  .ascending3{
+    display: flex;
+    flex-direction: column;
+    margin-left: 188px !important;
+    margin-top: -15px !important;
+  }
+ 
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: black !important;
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+  .table-responsive .ng-toggle-switch-core{
+    background-color: FFCC00 !important;
+  }
+  .ng-toggle-switch.true {
+    background-color:FFCC00;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  
+  .btn-apply {
+    color: white;
+    width: 83px;
+    height: 40px;
+    background-color: #FFCC00;
+  }
+  
+  .btn-reset {
+    width: 83px;
+    height: 40px;
+    background-color: white;
+    border-color: #FFCC00;
+    color: #FFCC00;
+  }
+  .modal-content{
+      width: 100% !important;
+  }
+  .rounded-corners {
+      border-radius: 20px; 
+      color: white;
+    }
+.mdi-delete{
+    font-size: 25px !important;
+    color: #FFCC00;
+    }
+    .search-form{
+      display: inline-block !important;
+  }
+  .searchbutton{
+      width: 300px !important;
+      margin-left: 40px !important;
+      height: 40px !important;
+      border: 1px solid #FFCC00 !important;
+      border-radius: 20px !important;
+  }
+  #searchForm{
+    border: none !important; 
+    width: 223px;
+    margin-left: 15px;
+    font-size: 20px;
+}
+.export2{
+  float: right;
+  color: white;
+ padding: 10px !important;
+  border-radius: 8px;
+  margin-right: 20px !important;
+}
+.input-group-text2{
+  margin-left: 15px !important;
+  padding-top: 5px !important;
+}
+.createPlaylistDone{
+  margin-bottom: 30px !important;
+  color: #FFCC00;
+  height: 40px;
+  width: 95%;
+  border-radius: 20px;
+  margin-right: 10px !important;
+  margin-left: 10px;
+   border: 1px solid #FFCC00;
+  background-color: none !important;
+  font-size: 15px !important;
+}
+.createPlaylistDone2{
+  margin-bottom: 30px !important;
+  color: white;
+  height: 40px;
+  width: 95%;
+  border-radius: 20px;
+  margin-right: 10px !important;
+  font-size: 15px !important;
+ 
+  
+}
+.btn-warning:hover {
+  background-color: none !important;
+}
+.btn-warning{
+  background-color: none !important;
+}
+.addedSuccess{
+  margin-top: 20px !important;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+.close{
+  color: #FFCC00;
+  border: 2px solid #FFCC00;
+  border-radius: 8px !important;
+  width: 28px;
+  height: 28px;
+}
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+  padding-top: 3px !important;
+}
+#exampleModalLabel{
+  font-size: 20px !important;
+}
+.btn i{
+  font-size: 22px !important;
+}
+.btn {
+  font-size: 22px ;
+}
+.btn-warning{
+  background-color: #FFCC00 !important;
+}
+.filterSelected{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+}

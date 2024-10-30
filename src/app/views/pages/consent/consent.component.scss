@@ -1,0 +1,253 @@
+.export{
+    float: right;
+}
+.icon{
+    color: #FFCC00;
+    font-size: 22px !important;
+}
+.export{
+    float: right;
+    color: white;
+   padding: 10px !important;
+    border-radius: 8px;
+  }
+  .btn i{
+    font-size: 22px !important;
+  }
+  .btn{
+    font-size: 22px !important;
+  }
+.export2{
+    float: right;
+    color: white;
+  padding: 10px !important;
+    border-radius: 8px;
+    margin-right: 20px !important;
+  }
+  .card {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    border: none !important;
+  }
+  .card .card-title {
+    color: #000 !important;
+    margin-bottom: 1.2rem !important;
+    text-transform: capitalize !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+  }
+  .tableheading{
+    background-color: rgba(255, 250, 231, 1);
+  }
+  .table thead th{
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #1D1D1D !important;
+}
+  
+  .eye{
+    width: 30px !important;
+    height: 15px !important;
+  }
+  .modal-title{
+    font-size: 27px !important;
+  }
+  .gameCreated{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .gameCreated h6{
+    font-size: 22px !important;
+    color: #1D1D1D;
+  }
+  .modal-header{
+    border-bottom: 1px solid #1D1D1D;
+  }
+ .gameViewColor{
+    color: #7E7E7E;
+  }
+  .close{
+    color: #FFCC00;
+    border: 2px solid #FFCC00;
+    border-radius: 8px !important;
+    width: 28px;
+    height: 28px;
+  }
+  .modal-header .close {
+    margin: 0;
+    padding: 0;
+    padding-top: 3px !important;
+}
+.btn-warning{
+  background-color: #FFCC00 !important;
+}
+.iconWidth{
+  display: flex !important; 
+  flex-wrap: nowrap !important;
+}
+.search-form{
+    display: inline-block !important;
+}
+.searchbutton{
+  width: 330px !important;
+  margin-left: 40px !important;
+  height: 45px !important;
+  border: 1px solid #FFCC00 !important;
+  border-radius: 20px !important;
+}
+.input-group-text{
+    background-color: white !important;
+}
+.input-group-text2{
+   margin-left: 15px !important;
+   padding-top: 5px !important;
+}
+#searchForm{
+        border: none !important; 
+        width: 223px;
+        margin-left: 15px;
+        font-size: 20px;
+    }
+#playlisttitle{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #FFFDF6;
+    border-radius: 5px !important;
+    text-align: center;
+    font-weight: 600;
+}
+#exampleModalLabel{
+    margin-left: 30px !important;
+    margin-bottom: -30px !important;
+}
+.modal-header{
+    border-bottom: none !important;
+}
+.float{
+    float: right;
+    font-size: 12px;
+}
+.proPlaylist{
+    font-weight: bold;
+}
+.playlistChecked{
+    display: flex;
+}
+.createPlaylist{
+    color: white;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    margin-right: 20px !important;
+}
+.addTag{
+    margin-top: -10px !important;
+}
+.addedSuccess{
+    font-size: 34px !important;
+    text-align: center !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.createPlaylistDone{
+    margin-bottom: 30px !important;
+    color: white;
+    height: 40px;
+    width: 93%;
+    border-radius: 20px;
+    margin-right: 20px !important;
+    margin-left: 10px;
+}
+.btn-apply {
+    color: white;
+    height: 37px !important;
+    width: 83px !important;
+    background-color: #FFCC00;
+    font-size: 16px !important;
+  
+}
+  
+  .btn-reset {
+    height: 37px !important;
+    width: 83px !important;
+    background-color: white;
+    border-color: #FFCC00;
+    color: #FFCC00;
+    font-size: 16px !important
+  }
+  .ascending2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 105px !important;
+    margin-top: -15px !important;
+  }
+  .ascending1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px !important;
+    margin-top: -15px !important;
+  }
+  .ascending3{
+    display: flex;
+    flex-direction: column;
+    margin-left: 145px !important;
+    margin-top: -15px !important;
+  }
+  .ascending4{
+    display: flex;
+    flex-direction: column;
+    margin-left: 155px !important;
+    margin-top: -15px !important;
+  }
+  .ascending5{
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px !important;
+    margin-top: -15px !important;
+  }
+  .ascending6{
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px !important;
+    margin-top: -15px !important;
+  }
+  .ascending7{
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px !important;
+    margin-top: -15px !important;
+  }
+  .ascending8{
+    display: flex;
+    flex-direction: column;
+    margin-left: 105px !important;
+    margin-top: -15px !important;
+  }
+  .ascending9{
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px !important;
+    margin-top: -15px !important;
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black;
+   
+  }
+  hr{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem !important;
+  }
+  .filterSelected{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+  }
